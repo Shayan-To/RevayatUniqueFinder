@@ -1,0 +1,687 @@
+DocumentFormat.OpenXml.Wordprocessing.ParagraphProperties
+├── DocumentFormat.OpenXml.Wordprocessing.AdjustRightIndent
+├── DocumentFormat.OpenXml.Wordprocessing.AutoSpaceDE
+├── DocumentFormat.OpenXml.Wordprocessing.AutoSpaceDN
+├── DocumentFormat.OpenXml.Wordprocessing.BiDi
+├── DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle
+├── DocumentFormat.OpenXml.Wordprocessing.ContextualSpacing
+├── DocumentFormat.OpenXml.Wordprocessing.DivId
+├── DocumentFormat.OpenXml.Wordprocessing.FrameProperties
+├── DocumentFormat.OpenXml.Wordprocessing.Indentation
+├── DocumentFormat.OpenXml.Wordprocessing.Justification
+├── DocumentFormat.OpenXml.Wordprocessing.KeepLines
+├── DocumentFormat.OpenXml.Wordprocessing.KeepNext
+├── DocumentFormat.OpenXml.Wordprocessing.Kinsoku
+├── DocumentFormat.OpenXml.Wordprocessing.MirrorIndents
+├── DocumentFormat.OpenXml.Wordprocessing.NumberingProperties
+│   ├── DocumentFormat.OpenXml.Wordprocessing.NumberingLevelReference
+│   ├── DocumentFormat.OpenXml.Wordprocessing.Inserted
+│   ├── DocumentFormat.OpenXml.Wordprocessing.NumberingId
+│   └── DocumentFormat.OpenXml.Wordprocessing.NumberingChange
+├── DocumentFormat.OpenXml.Wordprocessing.OutlineLevel
+├── DocumentFormat.OpenXml.Wordprocessing.OverflowPunctuation
+├── DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders
+│   ├── DocumentFormat.OpenXml.Wordprocessing.BarBorder
+│   ├── DocumentFormat.OpenXml.Wordprocessing.BetweenBorder
+│   ├── DocumentFormat.OpenXml.Wordprocessing.BottomBorder
+│   ├── DocumentFormat.OpenXml.Wordprocessing.LeftBorder
+│   ├── DocumentFormat.OpenXml.Wordprocessing.RightBorder
+│   └── DocumentFormat.OpenXml.Wordprocessing.TopBorder
+├── DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesChange
+│   ├── DocumentFormat.OpenXml.Wordprocessing.ParagraphPropertiesExtended
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.AdjustRightIndent
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.AutoSpaceDE
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.AutoSpaceDN
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.BiDi
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.ConditionalFormatStyle
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.ContextualSpacing
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.DivId
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.FrameProperties
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.Indentation
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.Justification
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.KeepLines
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.KeepNext
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.Kinsoku
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.MirrorIndents
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.NumberingProperties
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.NumberingLevelReference
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Inserted
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.NumberingId
+│   │   │   └── DocumentFormat.OpenXml.Wordprocessing.NumberingChange
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.OutlineLevel
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.OverflowPunctuation
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.ParagraphBorders
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.BarBorder
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.BetweenBorder
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.BottomBorder
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.LeftBorder
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.RightBorder
+│   │   │   └── DocumentFormat.OpenXml.Wordprocessing.TopBorder
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.ParagraphStyleId
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.PageBreakBefore
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.Shading
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.SnapToGrid
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.SuppressAutoHyphens
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.SuppressLineNumbers
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.SuppressOverlap
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.Tabs
+│   │   │   └── DocumentFormat.OpenXml.Wordprocessing.TabStop
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.TextAlignment
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.TextDirection
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.TextBoxTightWrap
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.TopLinePunctuation
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.WidowControl
+│   └   └── DocumentFormat.OpenXml.Wordprocessing.WordWrap
+├── DocumentFormat.OpenXml.Wordprocessing.ParagraphStyleId
+├── DocumentFormat.OpenXml.Wordprocessing.PageBreakBefore
+├── DocumentFormat.OpenXml.Wordprocessing.ParagraphMarkRunProperties
+│   ├── DocumentFormat.OpenXml.Office2010.Word.ContextualAlternatives
+│   ├── DocumentFormat.OpenXml.Office2010.Word.ConflictDeletion
+│   ├── DocumentFormat.OpenXml.Office2010.Word.ConflictInsertion
+│   ├── DocumentFormat.OpenXml.Office2010.Word.Glow
+│   │   ├── DocumentFormat.OpenXml.Office2010.Word.SchemeColor
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   │   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   │   ├── DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   └   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   ├── DocumentFormat.OpenXml.Office2010.Word.Ligatures
+│   ├── DocumentFormat.OpenXml.Office2010.Word.NumberingFormat
+│   ├── DocumentFormat.OpenXml.Office2010.Word.NumberSpacing
+│   ├── DocumentFormat.OpenXml.Office2010.Word.Properties3D
+│   │   ├── DocumentFormat.OpenXml.Office2010.Word.BevelBottom
+│   │   ├── DocumentFormat.OpenXml.Office2010.Word.BevelTop
+│   │   ├── DocumentFormat.OpenXml.Office2010.Word.ContourColor
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SchemeColor
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   │   │   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   │   └   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   │   ├── DocumentFormat.OpenXml.Office2010.Word.ExtrusionColor
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SchemeColor
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   │   │   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   └   └   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   ├── DocumentFormat.OpenXml.Office2010.Word.Reflection
+│   ├── DocumentFormat.OpenXml.Office2010.Word.Scene3D
+│   │   ├── DocumentFormat.OpenXml.Office2010.Word.Camera
+│   │   ├── DocumentFormat.OpenXml.Office2010.Word.LightRig
+│   │   └   └── DocumentFormat.OpenXml.Office2010.Word.SphereCoordinates
+│   ├── DocumentFormat.OpenXml.Office2010.Word.Shadow
+│   │   ├── DocumentFormat.OpenXml.Office2010.Word.SchemeColor
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   │   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   │   ├── DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   └   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   ├── DocumentFormat.OpenXml.Office2010.Word.StylisticSets
+│   │   └── DocumentFormat.OpenXml.Office2010.Word.StyleSet
+│   ├── DocumentFormat.OpenXml.Office2010.Word.FillTextEffect
+│   │   ├── DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.GradientStopList
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.GradientStop
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SchemeColor
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   │   │   │   │   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   │   │   └   └   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LinearShadeProperties
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties
+│   │   │   └   └── DocumentFormat.OpenXml.Office2010.Word.FillToRectangle
+│   │   ├── DocumentFormat.OpenXml.Office2010.Word.NoFillEmpty
+│   │   ├── DocumentFormat.OpenXml.Office2010.Word.SolidColorFillProperties
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SchemeColor
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   │   │   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   └   └   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   ├── DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect
+│   │   ├── DocumentFormat.OpenXml.Office2010.Word.BevelEmpty
+│   │   ├── DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.GradientStopList
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.GradientStop
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SchemeColor
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   │   │   │   │   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   │   │   └   └   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LinearShadeProperties
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties
+│   │   │   └   └── DocumentFormat.OpenXml.Office2010.Word.FillToRectangle
+│   │   ├── DocumentFormat.OpenXml.Office2010.Word.LineJoinMiterProperties
+│   │   ├── DocumentFormat.OpenXml.Office2010.Word.NoFillEmpty
+│   │   ├── DocumentFormat.OpenXml.Office2010.Word.PresetLineDashProperties
+│   │   ├── DocumentFormat.OpenXml.Office2010.Word.RoundEmpty
+│   │   ├── DocumentFormat.OpenXml.Office2010.Word.SolidColorFillProperties
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SchemeColor
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   │   │   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   └   └   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   ├── DocumentFormat.OpenXml.Wordprocessing.Bold
+│   ├── DocumentFormat.OpenXml.Wordprocessing.BoldComplexScript
+│   ├── DocumentFormat.OpenXml.Wordprocessing.Border
+│   ├── DocumentFormat.OpenXml.Wordprocessing.Caps
+│   ├── DocumentFormat.OpenXml.Wordprocessing.Color
+│   ├── DocumentFormat.OpenXml.Wordprocessing.ComplexScript
+│   ├── DocumentFormat.OpenXml.Wordprocessing.Deleted
+│   ├── DocumentFormat.OpenXml.Wordprocessing.DoubleStrike
+│   ├── DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout
+│   ├── DocumentFormat.OpenXml.Wordprocessing.TextEffect
+│   ├── DocumentFormat.OpenXml.Wordprocessing.Emphasis
+│   ├── DocumentFormat.OpenXml.Wordprocessing.Emboss
+│   ├── DocumentFormat.OpenXml.Wordprocessing.FitText
+│   ├── DocumentFormat.OpenXml.Wordprocessing.Highlight
+│   ├── DocumentFormat.OpenXml.Wordprocessing.Italic
+│   ├── DocumentFormat.OpenXml.Wordprocessing.ItalicComplexScript
+│   ├── DocumentFormat.OpenXml.Wordprocessing.Imprint
+│   ├── DocumentFormat.OpenXml.Wordprocessing.Inserted
+│   ├── DocumentFormat.OpenXml.Wordprocessing.Kern
+│   ├── DocumentFormat.OpenXml.Wordprocessing.Languages
+│   ├── DocumentFormat.OpenXml.Wordprocessing.MoveFrom
+│   ├── DocumentFormat.OpenXml.Wordprocessing.MoveTo
+│   ├── DocumentFormat.OpenXml.Wordprocessing.NoProof
+│   ├── DocumentFormat.OpenXml.Wordprocessing.OfficeMath
+│   ├── DocumentFormat.OpenXml.Wordprocessing.Outline
+│   ├── DocumentFormat.OpenXml.Wordprocessing.Position
+│   ├── DocumentFormat.OpenXml.Wordprocessing.RunFonts
+│   ├── DocumentFormat.OpenXml.Wordprocessing.ParagraphMarkRunPropertiesChange
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.PreviousParagraphMarkRunProperties
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.ContextualAlternatives
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.ConflictDeletion
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.ConflictInsertion
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Glow
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SchemeColor
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   │   │   │   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   │   │   └   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Ligatures
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.NumberingFormat
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.NumberSpacing
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Properties3D
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.BevelBottom
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.BevelTop
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.ContourColor
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SchemeColor
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   │   │   │   │   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   │   │   │   └   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.ExtrusionColor
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SchemeColor
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   │   │   │   │   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   │   │   └   └   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Reflection
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Scene3D
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Camera
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LightRig
+│   │   │   │   └   └── DocumentFormat.OpenXml.Office2010.Word.SphereCoordinates
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shadow
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SchemeColor
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   │   │   │   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   │   │   └   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.StylisticSets
+│   │   │   │   └── DocumentFormat.OpenXml.Office2010.Word.StyleSet
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.FillTextEffect
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.GradientStopList
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.GradientStop
+│   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SchemeColor
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   │   │   │   │   │   │   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   │   │   │   │   └   └   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LinearShadeProperties
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties
+│   │   │   │   │   └   └── DocumentFormat.OpenXml.Office2010.Word.FillToRectangle
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.NoFillEmpty
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SolidColorFillProperties
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SchemeColor
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   │   │   │   │   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   │   │   └   └   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.TextOutlineEffect
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.BevelEmpty
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.GradientFillProperties
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.GradientStopList
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.GradientStop
+│   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SchemeColor
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   │   │   │   │   │   │   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   │   │   │   │   └   └   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LinearShadeProperties
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.PathShadeProperties
+│   │   │   │   │   └   └── DocumentFormat.OpenXml.Office2010.Word.FillToRectangle
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LineJoinMiterProperties
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.NoFillEmpty
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.PresetLineDashProperties
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.RoundEmpty
+│   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SolidColorFillProperties
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SchemeColor
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   │   │   │   │   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.RgbColorModelHex
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Alpha
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.HueModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Luminance
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.LuminanceOffset
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Saturation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationModulation
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.SaturationOffset
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Office2010.Word.Shade
+│   │   │   │   └   └   └── DocumentFormat.OpenXml.Office2010.Word.Tint
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Bold
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.BoldComplexScript
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Border
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Caps
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Color
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.ComplexScript
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Deleted
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.DoubleStrike
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.EastAsianLayout
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.TextEffect
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Emphasis
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Emboss
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.FitText
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Highlight
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Italic
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.ItalicComplexScript
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Imprint
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Inserted
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Kern
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Languages
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.MoveFrom
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.MoveTo
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.NoProof
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.OfficeMath
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Outline
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Position
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.RunFonts
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.RunStyle
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.RightToLeftText
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Shadow
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Shading
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.SmallCaps
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.SnapToGrid
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Spacing
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.SpecVanish
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Strike
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.FontSize
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.FontSizeComplexScript
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Underline
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Vanish
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignment
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.CharacterScale
+│   │   └   └── DocumentFormat.OpenXml.Wordprocessing.WebHidden
+│   ├── DocumentFormat.OpenXml.Wordprocessing.RunStyle
+│   ├── DocumentFormat.OpenXml.Wordprocessing.RightToLeftText
+│   ├── DocumentFormat.OpenXml.Wordprocessing.Shadow
+│   ├── DocumentFormat.OpenXml.Wordprocessing.Shading
+│   ├── DocumentFormat.OpenXml.Wordprocessing.SmallCaps
+│   ├── DocumentFormat.OpenXml.Wordprocessing.SnapToGrid
+│   ├── DocumentFormat.OpenXml.Wordprocessing.Spacing
+│   ├── DocumentFormat.OpenXml.Wordprocessing.SpecVanish
+│   ├── DocumentFormat.OpenXml.Wordprocessing.Strike
+│   ├── DocumentFormat.OpenXml.Wordprocessing.FontSize
+│   ├── DocumentFormat.OpenXml.Wordprocessing.FontSizeComplexScript
+│   ├── DocumentFormat.OpenXml.Wordprocessing.Underline
+│   ├── DocumentFormat.OpenXml.Wordprocessing.Vanish
+│   ├── DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignment
+│   ├── DocumentFormat.OpenXml.Wordprocessing.CharacterScale
+│   └── DocumentFormat.OpenXml.Wordprocessing.WebHidden
+├── DocumentFormat.OpenXml.Wordprocessing.SectionProperties
+│   ├── DocumentFormat.OpenXml.Office2013.Word.FootnoteColumns
+│   ├── DocumentFormat.OpenXml.Wordprocessing.BiDi
+│   ├── DocumentFormat.OpenXml.Wordprocessing.Columns
+│   │   └── DocumentFormat.OpenXml.Wordprocessing.Column
+│   ├── DocumentFormat.OpenXml.Wordprocessing.DocGrid
+│   ├── DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.NumberingFormat
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.NumberingRestart
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.NumberingStart
+│   │   └── DocumentFormat.OpenXml.Wordprocessing.EndnotePosition
+│   ├── DocumentFormat.OpenXml.Wordprocessing.FooterReference
+│   ├── DocumentFormat.OpenXml.Wordprocessing.FootnoteProperties
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.NumberingFormat
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.NumberingRestart
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.NumberingStart
+│   │   └── DocumentFormat.OpenXml.Wordprocessing.FootnotePosition
+│   ├── DocumentFormat.OpenXml.Wordprocessing.FormProtection
+│   ├── DocumentFormat.OpenXml.Wordprocessing.HeaderReference
+│   ├── DocumentFormat.OpenXml.Wordprocessing.LineNumberType
+│   ├── DocumentFormat.OpenXml.Wordprocessing.NoEndnote
+│   ├── DocumentFormat.OpenXml.Wordprocessing.PaperSource
+│   ├── DocumentFormat.OpenXml.Wordprocessing.PageBorders
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.BottomBorder
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.LeftBorder
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.RightBorder
+│   │   └── DocumentFormat.OpenXml.Wordprocessing.TopBorder
+│   ├── DocumentFormat.OpenXml.Wordprocessing.PageMargin
+│   ├── DocumentFormat.OpenXml.Wordprocessing.PageNumberType
+│   ├── DocumentFormat.OpenXml.Wordprocessing.PageSize
+│   ├── DocumentFormat.OpenXml.Wordprocessing.PrinterSettingsReference
+│   ├── DocumentFormat.OpenXml.Wordprocessing.GutterOnRight
+│   ├── DocumentFormat.OpenXml.Wordprocessing.SectionPropertiesChange
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties
+│   │   │   ├── DocumentFormat.OpenXml.Office2013.Word.FootnoteColumns
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.BiDi
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Columns
+│   │   │   │   └── DocumentFormat.OpenXml.Wordprocessing.Column
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.DocGrid
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.EndnoteProperties
+│   │   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.NumberingFormat
+│   │   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.NumberingRestart
+│   │   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.NumberingStart
+│   │   │   │   └── DocumentFormat.OpenXml.Wordprocessing.EndnotePosition
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.FootnoteProperties
+│   │   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.NumberingFormat
+│   │   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.NumberingRestart
+│   │   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.NumberingStart
+│   │   │   │   └── DocumentFormat.OpenXml.Wordprocessing.FootnotePosition
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.FormProtection
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.LineNumberType
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.NoEndnote
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.PaperSource
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.PageBorders
+│   │   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.BottomBorder
+│   │   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.LeftBorder
+│   │   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.RightBorder
+│   │   │   │   └── DocumentFormat.OpenXml.Wordprocessing.TopBorder
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.PageMargin
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.PageNumberType
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.PageSize
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.PrinterSettingsReference
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.GutterOnRight
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.TextDirection
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.TitlePage
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.SectionType
+│   │   └   └── DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignmentOnPage
+│   ├── DocumentFormat.OpenXml.Wordprocessing.TextDirection
+│   ├── DocumentFormat.OpenXml.Wordprocessing.TitlePage
+│   ├── DocumentFormat.OpenXml.Wordprocessing.SectionType
+│   └── DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignmentOnPage
+├── DocumentFormat.OpenXml.Wordprocessing.Shading
+├── DocumentFormat.OpenXml.Wordprocessing.SnapToGrid
+├── DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines
+├── DocumentFormat.OpenXml.Wordprocessing.SuppressAutoHyphens
+├── DocumentFormat.OpenXml.Wordprocessing.SuppressLineNumbers
+├── DocumentFormat.OpenXml.Wordprocessing.SuppressOverlap
+├── DocumentFormat.OpenXml.Wordprocessing.Tabs
+│   └── DocumentFormat.OpenXml.Wordprocessing.TabStop
+├── DocumentFormat.OpenXml.Wordprocessing.TextAlignment
+├── DocumentFormat.OpenXml.Wordprocessing.TextDirection
+├── DocumentFormat.OpenXml.Wordprocessing.TextBoxTightWrap
+├── DocumentFormat.OpenXml.Wordprocessing.TopLinePunctuation
+├── DocumentFormat.OpenXml.Wordprocessing.WidowControl
+└── DocumentFormat.OpenXml.Wordprocessing.WordWrap

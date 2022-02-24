@@ -1,0 +1,30 @@
+{
+    "folders": [
+        {
+            "path": "."
+        },
+        {
+            "path": "../KsCommonLibrary"
+        },
+        {
+            "path": "./Client"
+        }
+    ],
+    "settings": {
+        "workbench.colorCustomizations": {
+            "editorGroup.border": "#6eecba",
+            "panel.border": "#6eecba",
+            "sideBar.border": "#6eecba",
+            "statusBar.background": "#41e6a4",
+            "statusBar.foreground": "#15202b",
+            "statusBarItem.hoverBackground": "#1cd88d",
+            "tab.activeBorder": "#6eecba",
+            "titleBar.activeBackground": "#41e6a4",
+            "titleBar.activeForeground": "#15202b",
+            "titleBar.inactiveBackground": "#41e6a499",
+            "titleBar.inactiveForeground": "#15202b99"
+        },
+        "peacock.color": "#41e6a4",
+        "window.title": "${dirty}${activeEditorShort}${separator}RevayatUniqueFinder${separator}Full Stack${separator}${appName}"
+    }
+}

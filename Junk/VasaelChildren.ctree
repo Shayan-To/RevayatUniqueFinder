@@ -1,0 +1,75 @@
+﻿DocumentFormat.OpenXml.Wordprocessing.Body
+├── DocumentFormat.OpenXml.Wordprocessing.Paragraph
+│   ├── DocumentFormat.OpenXml.Wordprocessing.ParagraphProperties
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.Justification
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.ParagraphMarkRunProperties
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.RunFonts
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Color
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.FontSize
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.FontSizeComplexScript
+│   │   └   └── DocumentFormat.OpenXml.Wordprocessing.RightToLeftText
+│   ├── DocumentFormat.OpenXml.Wordprocessing.BookmarkStart
+│   ├── DocumentFormat.OpenXml.Wordprocessing.BookmarkEnd
+│   ├── DocumentFormat.OpenXml.Wordprocessing.Run
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.RunProperties
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.RunFonts
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Color
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.FontSize
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.FontSizeComplexScript
+│   │   │   └── DocumentFormat.OpenXml.Wordprocessing.RightToLeftText
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.Text
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.Break
+│   └   └── DocumentFormat.OpenXml.Wordprocessing.LastRenderedPageBreak
+├── DocumentFormat.OpenXml.Wordprocessing.Table
+│   ├── DocumentFormat.OpenXml.Wordprocessing.TableProperties
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.BiDiVisual
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.TableWidth
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.TableJustification
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.TableCellSpacing
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.TableCellMarginDefault
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.TopMargin
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.TableCellLeftMargin
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.BottomMargin
+│   │   │   └── DocumentFormat.OpenXml.Wordprocessing.TableCellRightMargin
+│   │   └── DocumentFormat.OpenXml.Wordprocessing.TableLook
+│   ├── DocumentFormat.OpenXml.Wordprocessing.TableGrid
+│   │   └── DocumentFormat.OpenXml.Wordprocessing.GridColumn
+│   ├── DocumentFormat.OpenXml.Wordprocessing.TableRow
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.TableRowProperties
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.TableCellSpacing
+│   │   │   └── DocumentFormat.OpenXml.Wordprocessing.TableJustification
+│   │   ├── DocumentFormat.OpenXml.Wordprocessing.TableCell
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.TableCellProperties
+│   │   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.TableCellWidth
+│   │   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.TableCellVerticalAlignment
+│   │   │   │   └── DocumentFormat.OpenXml.Wordprocessing.HideMark
+│   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Paragraph
+│   │   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.ParagraphProperties
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.SpacingBetweenLines
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Justification
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.ParagraphMarkRunProperties
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.RunFonts
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Color
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.FontSize
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.FontSizeComplexScript
+│   │   │   │   │   └   └── DocumentFormat.OpenXml.Wordprocessing.RightToLeftText
+│   │   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.BookmarkStart
+│   │   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.BookmarkEnd
+│   │   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Run
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.RunProperties
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.RunFonts
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Color
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.FontSize
+│   │   │   │   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.FontSizeComplexScript
+│   │   │   │   │   │   └── DocumentFormat.OpenXml.Wordprocessing.RightToLeftText
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Text
+│   │   │   │   │   ├── DocumentFormat.OpenXml.Wordprocessing.Break
+│   └   └   └   └   └── DocumentFormat.OpenXml.Wordprocessing.LastRenderedPageBreak
+├── DocumentFormat.OpenXml.Wordprocessing.SectionProperties
+│   ├── DocumentFormat.OpenXml.Wordprocessing.PageSize
+│   ├── DocumentFormat.OpenXml.Wordprocessing.PageMargin
+│   ├── DocumentFormat.OpenXml.Wordprocessing.Columns
+│   ├── DocumentFormat.OpenXml.Wordprocessing.BiDi
+│   ├── DocumentFormat.OpenXml.Wordprocessing.GutterOnRight
+└   └── DocumentFormat.OpenXml.Wordprocessing.DocGrid

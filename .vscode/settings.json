@@ -1,0 +1,23 @@
+{
+    "workbench.colorCustomizations": {
+        "editorGroup.border": "#457d33",
+        "panel.border": "#457d33",
+        "sideBar.border": "#457d33",
+        "statusBar.background": "#315924",
+        "statusBar.foreground": "#e7e7e7",
+        "statusBarItem.hoverBackground": "#457d33",
+        "tab.activeBorder": "#457d33",
+        "titleBar.activeBackground": "#315924",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.inactiveBackground": "#31592499",
+        "titleBar.inactiveForeground": "#e7e7e799"
+    },
+    "peacock.color": "#315924",
+    "files.exclude": {
+        "Client/{[^d]*,d[^a]*,da[^t]*,dat[^a]*,data?*}": true,
+        ".vs": true,
+        "bin": true,
+        "obj": true,
+    },
+    "omnisharp.defaultLaunchSolution": "RevayatUniqueFinder.sln"
+}

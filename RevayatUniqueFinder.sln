@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31815.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RevayatUniqueFinder", "RevayatUniqueFinder.csproj", "{5FD2619F-26EE-416E-A96B-088FBF1F5AD2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KsCommonLibrary", "..\KsCommonLibrary\KsCommonLibrary.csproj", "{4A679CC6-0E0D-41C7-8DB2-6CB5E6560347}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FD2619F-26EE-416E-A96B-088FBF1F5AD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FD2619F-26EE-416E-A96B-088FBF1F5AD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FD2619F-26EE-416E-A96B-088FBF1F5AD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FD2619F-26EE-416E-A96B-088FBF1F5AD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A679CC6-0E0D-41C7-8DB2-6CB5E6560347}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A679CC6-0E0D-41C7-8DB2-6CB5E6560347}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A679CC6-0E0D-41C7-8DB2-6CB5E6560347}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A679CC6-0E0D-41C7-8DB2-6CB5E6560347}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6002CCD9-9B42-426F-AA72-678B718CB72D}
+	EndGlobalSection
+EndGlobal
