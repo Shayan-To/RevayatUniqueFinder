@@ -1,42 +1,42 @@
 {
-    "workbench.colorCustomizations": {
-        "editorGroup.border": "#43e412",
-        "panel.border": "#43e412",
-        "sideBar.border": "#43e412",
-        "statusBar.background": "#35b50e",
-        "statusBar.foreground": "#e7e7e7",
-        "statusBarItem.hoverBackground": "#43e412",
-        "tab.activeBorder": "#43e412",
-        "titleBar.activeBackground": "#35b50e",
-        "titleBar.activeForeground": "#e7e7e7",
-        "titleBar.inactiveBackground": "#35b50e99",
-        "titleBar.inactiveForeground": "#e7e7e799"
-    },
-    "peacock.color": "#35b50e",
-    "window.title": "${dirty}${activeEditorShort}${separator}RevayatUniqueFinder${separator}Client${separator}${appName}",
-    "search.exclude": {
-        "**/.yarn": true,
-        "**/.pnp.*": true
-    },
-    "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
-    "typescript.tsdk": ".yarn/sdks/typescript/lib",
-    "typescript.enablePromptUseWorkspaceTsdk": true,
-    "eslint.nodePath": ".yarn/sdks",
-    "explorer.experimental.fileNesting.enabled": true,
-    "explorer.experimental.fileNesting.expand": true,
-    "explorer.experimental.fileNesting.patterns": {
-        "*.ts": "$(capture).js, $(capture).d.ts",
-        "*.js": "$(capture).js.map, $(capture).min.js, $(capture).d.ts",
-        "*.jsx": "$(capture).js",
-        "*.tsx": "$(capture).ts",
-        "tsconfig.json": "tsconfig.*.json",
-        ".eslintrc.js": ".eslintignore",
-        ".prettierrc.json": ".prettierignore, .prettier-ignore",
-        "package.json": "yarn.lock, .yarnrc.yml"
-    },
-    "files.exclude": {
-        ".parcel-cache/": true,
-        "dist/": true,
-        ".pnp.*": true
-    }
+  "workbench.colorCustomizations": {
+    "editorGroup.border": "#43e412",
+    "panel.border": "#43e412",
+    "sideBar.border": "#43e412",
+    "statusBar.background": "#35b50e",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#43e412",
+    "tab.activeBorder": "#43e412",
+    "titleBar.activeBackground": "#35b50e",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#35b50e99",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#35b50e",
+  "window.title": "${dirty}${activeEditorShort}${separator}RevayatUniqueFinder${separator}Client${separator}${appName}",
+  "search.exclude": {
+    "**/.yarn": true,
+    "**/.pnp.*": true
+  },
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
+  "typescript.tsdk": ".yarn/sdks/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "eslint.nodePath": ".yarn/sdks",
+  "explorer.experimental.fileNesting.enabled": true,
+  "explorer.experimental.fileNesting.expand": true,
+  "explorer.experimental.fileNesting.patterns": {
+    "*.ts": "$(capture).js, $(capture).d.ts",
+    "*.js": "$(capture).js.map, $(capture).min.js, $(capture).d.ts",
+    "*.jsx": "$(capture).js",
+    "*.tsx": "$(capture).ts",
+    "tsconfig.json": "tsconfig.*.json",
+    ".eslintrc.js": ".eslintignore",
+    ".prettierrc.json": ".prettierignore, .prettier-ignore",
+    "package.json": "yarn.lock, .yarnrc.yml"
+  },
+  "files.exclude": {
+    ".parcel-cache/": true,
+    "dist/": true,
+    ".pnp.*": true
+  }
 }

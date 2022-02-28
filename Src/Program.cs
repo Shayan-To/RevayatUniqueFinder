@@ -1,9 +1,18 @@
-﻿using DocumentFormat.OpenXml;
-using DocumentFormat.OpenXml.Packaging;
+﻿using DocumentFormat.OpenXml.Packaging;
 
-using Ks.Common;
+void GenerateTypes()
+{
+    var basePath = Paths.GenOutput;
+    var typesFile = Path.Combine($"{basePath}", "types.ts");
 
-using RevayatUniqueFinder;
+    if (!Directory.Exists(basePath))
+    {
+        Directory.Delete(basePath, true);
+    }
+    Directory.CreateDirectory(basePath);
+
+    using var writer = new StreamWriter(File.Open(typesFile, FileMode.Create, FileAccess.Write, FileShare.Read));
+}
 
 var doc = WordprocessingDocument.Open(Path.Combine(Paths.Documents, "وسائل الشيعة.docx"), false);
 

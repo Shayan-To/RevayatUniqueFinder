@@ -5,17 +5,22 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>Enable</ImplicitUsings>
         <Nullable>Enable</Nullable>
-        <ErrorReport>none</ErrorReport>
-        <AnalysisLevel>preview</AnalysisLevel>
+        <ErrorReport>None</ErrorReport>
+        <LangVersion>Preview</LangVersion>
+        <AnalysisLevel>Preview</AnalysisLevel>
     </PropertyGroup>
 
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PropertyGroup>
       <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
     </PropertyGroup>
 
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-      <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
-    </PropertyGroup>
+    <ItemGroup>
+        <Using Include="RevayatUniqueFinder" />
+        <Using Include="Ks.Common" />
+        <Using Include="DocumentFormat.OpenXml" />
+        <Using Include="DocumentFormat.OpenXml" Alias="OXml" />
+        <Using Include="DocumentFormat.OpenXml.Wordprocessing" Alias="Word" />
+    </ItemGroup>
 
     <ItemGroup>
         <PackageReference Include="DocumentFormat.OpenXml" Version="2.15.0" />

@@ -1,0 +1,60 @@
+Object (System)
+├── OpenXmlElement (DocumentFormat.OpenXml) #
+│   ├── OpenXmlCompositeElement (DocumentFormat.OpenXml) #
+│   │   ├── BodyType (DocumentFormat.OpenXml.Wordprocessing) #
+│   │   │   └── Body (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── Columns (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── Paragraph (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── ParagraphMarkRunProperties (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── ParagraphProperties (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── Run (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── RunProperties (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── SectionProperties (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── Table (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── TableCell (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── TableCellMarginDefault (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── TableCellProperties (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── TableGrid (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── TableProperties (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── TableRow (DocumentFormat.OpenXml.Wordprocessing)
+│   │   └── TableRowProperties (DocumentFormat.OpenXml.Wordprocessing)
+│   ├── OpenXmlLeafElement (DocumentFormat.OpenXml) #
+│   │   ├── OpenXmlLeafTextElement (DocumentFormat.OpenXml) #
+│   │   │   ├── TextType (DocumentFormat.OpenXml.Wordprocessing) #
+│   │   │   └   └── Text (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── BookmarkStart (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── Break (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── Color (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── DocGrid (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── EmptyType (DocumentFormat.OpenXml.Wordprocessing) #
+│   │   │   └── LastRenderedPageBreak (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── GridColumn (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── HpsMeasureType (DocumentFormat.OpenXml.Wordprocessing) #
+│   │   │   ├── FontSize (DocumentFormat.OpenXml.Wordprocessing)
+│   │   │   └── FontSizeComplexScript (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── Justification (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── MarkupRangeType (DocumentFormat.OpenXml.Wordprocessing) #
+│   │   │   └── BookmarkEnd (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── OnOffOnlyType (DocumentFormat.OpenXml.Wordprocessing) #
+│   │   │   ├── BiDiVisual (DocumentFormat.OpenXml.Wordprocessing)
+│   │   │   └── HideMark (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── OnOffType (DocumentFormat.OpenXml.Wordprocessing) #
+│   │   │   ├── BiDi (DocumentFormat.OpenXml.Wordprocessing)
+│   │   │   ├── GutterOnRight (DocumentFormat.OpenXml.Wordprocessing)
+│   │   │   └── RightToLeftText (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── PageMargin (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── PageSize (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── RunFonts (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── SpacingBetweenLines (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── TableCellVerticalAlignment (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── TableJustification (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── TableLook (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── TableWidthDxaNilType (DocumentFormat.OpenXml.Wordprocessing) #
+│   │   │   ├── TableCellLeftMargin (DocumentFormat.OpenXml.Wordprocessing)
+│   │   │   └── TableCellRightMargin (DocumentFormat.OpenXml.Wordprocessing)
+│   │   ├── TableWidthType (DocumentFormat.OpenXml.Wordprocessing) #
+│   │   │   ├── BottomMargin (DocumentFormat.OpenXml.Wordprocessing)
+│   │   │   ├── TableCellSpacing (DocumentFormat.OpenXml.Wordprocessing)
+│   │   │   ├── TableCellWidth (DocumentFormat.OpenXml.Wordprocessing)
+│   │   │   ├── TableWidth (DocumentFormat.OpenXml.Wordprocessing)
+└   └   └   └── TopMargin (DocumentFormat.OpenXml.Wordprocessing)
