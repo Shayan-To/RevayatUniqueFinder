@@ -1,6 +1,15 @@
 namespace RevayatUniqueFinder;
 
-public class Paragraph
+[GenerateTs]
+public class Paragraph : ModelBase<Word.Paragraph>
 {
 
+}
+
+[GenerateTs]
+public enum EnumTest
+{
+    Test1,
+    Test2,
+    Test3,
 }
