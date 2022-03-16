@@ -1,0 +1,67 @@
+Object (System)
+├── AccessTools (HarmonyLib) $ #
+├── CodeInstruction (HarmonyLib)
+├── CodeInstructionExtensions (HarmonyLib) $ #
+├── CollectionExtensions (HarmonyLib) $ #
+├── DelegateTypeFactory (HarmonyLib)
+├── ExceptionBlock (HarmonyLib)
+├── FastAccess (HarmonyLib) $ #
+├── FileLog (HarmonyLib) $ #
+├── GeneralExtensions (HarmonyLib) $ #
+├── Harmony (HarmonyLib)
+├── HarmonyMethod (HarmonyLib)
+├── HarmonyMethodExtensions (HarmonyLib) $ #
+├── InlineSignature (HarmonyLib)
+├── ModifierType + InlineSignature (HarmonyLib) !
+├── Memory (HarmonyLib) $ #
+├── MethodBaseExtensions (HarmonyLib) $ #
+├── MethodInvoker (HarmonyLib) $ #
+├── Patch (HarmonyLib)
+├── PatchClassProcessor (HarmonyLib)
+├── Patches (HarmonyLib)
+├── PatchInfo (HarmonyLib)
+├── PatchProcessor (HarmonyLib)
+├── Priority (HarmonyLib) $ #
+├── ReversePatcher (HarmonyLib)
+├── SymbolExtensions (HarmonyLib) $ #
+├── Transpilers (HarmonyLib) $ #
+├── Traverse (HarmonyLib)
+├── Traverse`1 (HarmonyLib)
+├── Attribute (System) #
+│   ├── HarmonyArgument (HarmonyLib)
+│   ├── HarmonyAttribute (HarmonyLib)
+│   │   ├── HarmonyAfter (HarmonyLib)
+│   │   ├── HarmonyBefore (HarmonyLib)
+│   │   ├── HarmonyDebug (HarmonyLib)
+│   │   ├── HarmonyPatch (HarmonyLib)
+│   │   │   └── HarmonyDelegate (HarmonyLib)
+│   │   ├── HarmonyPatchAll (HarmonyLib)
+│   │   ├── HarmonyPriority (HarmonyLib)
+│   │   └── HarmonyReversePatch (HarmonyLib)
+│   ├── HarmonyCleanup (HarmonyLib)
+│   ├── HarmonyFinalizer (HarmonyLib)
+│   ├── HarmonyPostfix (HarmonyLib)
+│   ├── HarmonyPrefix (HarmonyLib)
+│   ├── HarmonyPrepare (HarmonyLib)
+│   ├── HarmonyTargetMethod (HarmonyLib)
+│   ├── HarmonyTargetMethods (HarmonyLib)
+│   └── HarmonyTranspiler (HarmonyLib)
+├── Delegate (System) #
+│   ├── MulticastDelegate (System) #
+│   │   ├── FieldRef`1 + AccessTools (HarmonyLib) ! $
+│   │   ├── FieldRef`2 + AccessTools (HarmonyLib) ! $
+│   │   ├── StructFieldRef`2 + AccessTools (HarmonyLib) ! $
+│   │   ├── FastInvokeHandler (HarmonyLib) $
+│   │   ├── GetterHandler`2 (HarmonyLib) $
+│   │   ├── InstantiationHandler`1 (HarmonyLib) $
+│   └   └── SetterHandler`2 (HarmonyLib) $
+├── Exception (System)
+│   └── HarmonyException (HarmonyLib)
+├── ValueType (System) #
+│   ├── Enum (System) #
+│   │   ├── ArgumentType (HarmonyLib) $
+│   │   ├── ExceptionBlockType (HarmonyLib) $
+│   │   ├── HarmonyPatchType (HarmonyLib) $
+│   │   ├── HarmonyReversePatchType (HarmonyLib) $
+│   │   ├── MethodDispatchType (HarmonyLib) $
+└   └   └── MethodType (HarmonyLib) $

@@ -1,13 +1,10 @@
 {
     "folders": [
         {
-            "path": "."
+            "path": ".."
         },
         {
-            "path": "../KsCommonLibrary"
-        },
-        {
-            "path": "./Client"
+            "path": "../../KsCommonLibrary"
         }
     ],
     "settings": {
@@ -25,6 +22,7 @@
             "titleBar.inactiveForeground": "#15202b99"
         },
         "peacock.color": "#41e6a4",
-        "window.title": "${dirty}${activeEditorShort}${separator}RevayatUniqueFinder${separator}Full Stack${separator}${appName}"
+        "omnisharp.defaultLaunchSolution": "RevayatUniqueFinder.sln",
+        "window.title": "${dirty}${activeEditorShort}${separator}RevayatUniqueFinder${separator}${appName}"
     }
 }

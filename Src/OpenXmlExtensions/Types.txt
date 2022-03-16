@@ -1,0 +1,1 @@
+DocumentFormat.OpenXml.Wordprocessing.Paragraph>DocumentFormat\.OpenXml\.Wordprocessing\.[^.]+
