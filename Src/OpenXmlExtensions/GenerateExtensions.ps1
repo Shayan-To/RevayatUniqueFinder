@@ -19,9 +19,9 @@ static partial class OpenXmlExtensions
     ForEach ($Att In $Md.Attributes)
     {
         Write-Output @"
-    public static $($Att.Type.FullName) Get$($Att.PropertyName)(this $($Md.Type.FullName) element)
+    public static ExtensionValue<$($Att.Type.FullName)> Get$($Att.PropertyName)(this ExtensionElement<$($Md.Type.FullName)> element)
     {
-        return element.GetAttribute<$($Att.Type.FullName)>("$($Att.PropertyName)", "$($Att.QName.Namespace.Uri)", "$($Att.QName.Name)");
+        return element.GetAttribute<$($Md.Type.FullName), $($Att.Type.FullName)>(new("$($Att.PropertyName)", "$($Att.QName.Name)", "$($Att.QName.Namespace.Uri)", "$($Att.QName.Namespace.Prefix)"));
     }
 "@
     }
@@ -35,9 +35,9 @@ static partial class OpenXmlExtensions
                 Continue
             }
             Write-Output @"
-    public static IEnumerable<$($Ch.Type.FullName)> Collect$($Ch.Type.Name)s(this $($Md.Type.FullName) element)
+    public static IEnumerable<ExtensionElement<$($Ch.Type.FullName)>> Collect$($Ch.Type.Name)s(this ExtensionElement<$($Md.Type.FullName)> element)
     {
-        return element.GetChildren<$($Ch.Type.FullName)>();
+        return element.GetChildren<$($Md.Type.FullName), $($Ch.Type.FullName)>();
     }
 "@
         }

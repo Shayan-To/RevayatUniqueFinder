@@ -2,17 +2,56 @@ namespace RevayatUniqueFinder;
 
 public static partial class OpenXmlExtensions
 {
-    private static T GetAttribute<T>(this OpenXmlElement element, string propertyName, string namespaceUri, string localName) where T : OpenXmlSimpleType, new()
+    public static ExtensionElement<TElement> Wrap<TElement>(this TElement element)
+        where TElement : OpenXmlElement
     {
-        Utilities.DoNothing(propertyName);
-        var att = element.GetAttribute(localName, namespaceUri);
-        var val = new T();
-        val.InnerText = att.Value;
-        return val;
+        return new(element);
     }
 
-    private static IEnumerable<T> GetChildren<T>(this OpenXmlElement element) where T : OpenXmlElement
+    private static ExtensionValue<T> GetAttribute<TElement, T>(this ExtensionElement<TElement> element, XmlQualifiedName name)
+        where TElement : OpenXmlElement where T : OpenXmlSimpleType, new()
     {
-        return element.ChildElements.OfType<T>();
+        var att = element.Element.GetAttribute(name.Name, name.NamespaceUri);
+        var res = new ExtensionValue<T>(new() { InnerText = att.Value }, new(element, ExtensionValueSourceType.Attribute, name));
+        Listeners.OnAttributeAccess(element, name, new(res.Value, res.Source));
+        return res;
     }
+
+    private static IEnumerable<ExtensionElement<TChildren>> GetChildren<TElement, TChildren>(this ExtensionElement<TElement> element)
+        where TElement : OpenXmlElement where TChildren : OpenXmlElement
+    {
+        return element.Element.ChildElements.OfType<TChildren>().Select(ch => ChildSelector(element, ch));
+    }
+
+    public static IEnumerable<ExtensionElement<OpenXmlElement>> Children(this ExtensionElement<OpenXmlElement> element)
+    {
+        return element.Element.ChildElements.Select(ch => ChildSelector(element, ch));
+    }
+
+    private static ExtensionElement<TElement> ChildSelector<TElement>(ExtensionElement<OpenXmlElement> element, TElement ch)
+        where TElement : OpenXmlElement
+    {
+        Listeners.OnChildAccess(element, new(ch));
+        return new(ch);
+    }
+
+    public static ExtensionValue<string> Content<TElement>(this ExtensionElement<TElement> element)
+        where TElement : OpenXmlLeafTextElement
+    {
+        var res = new ExtensionValue<string>(element.Element.Text, new(element, ExtensionValueSourceType.Content));
+        Listeners.OnContentAccess(element, res);
+        return res;
+    }
+
+    public static void AddListener(ExtensionListener listener)
+    {
+        Listeners.Listeners.Add(listener);
+    }
+
+    public static void RemoveListener(ExtensionListener listener)
+    {
+        Listeners.Listeners.Remove(listener);
+    }
+
+    private static readonly ExtensionListenerList Listeners = new();
 }
