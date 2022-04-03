@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Linq.Expressions;
 using System.Reflection;
+using System.Text.Json;
 
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
@@ -25,15 +26,13 @@ static void Test()
 {
     var body = ReadBody();
 
+    JsonSerializer.Serialize(Console.OpenStandardOutput(), new OutputXml(body, new()), new JsonSerializerOptions() {});
+
     // Traverse(body, el => {
     //     Patches.ElArrayToElement.Add(el.DynGetAttrsArray(), el);
     // });
 
     // Console.WriteLine(body.DynGetAttrsArray().AllToString());
-
-    var para = body.ChildElements.OfType<Word.Paragraph>().First();
-    Console.WriteLine(para.ParagraphId);
-    Console.WriteLine(para.TextId);
 }
 
 static void Traverse(OpenXmlElement element, Action<OpenXmlElement> action)

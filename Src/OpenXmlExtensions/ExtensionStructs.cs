@@ -1,6 +1,6 @@
 namespace RevayatUniqueFinder;
 
-public struct ExtensionElement<TElement> where TElement : OpenXmlElement
+public record struct ExtensionElement<TElement> where TElement : OpenXmlElement
 {
     public ExtensionElement(TElement element)
     {
@@ -15,7 +15,7 @@ public struct ExtensionElement<TElement> where TElement : OpenXmlElement
     public TElement Element { get; }
 }
 
-public struct ExtensionValue<T>
+public record struct ExtensionValue<T>
 {
     public ExtensionValue(T value, ExtensionValueSource source)
     {
@@ -27,7 +27,7 @@ public struct ExtensionValue<T>
     public ExtensionValueSource Source { get; }
 }
 
-public struct ExtensionValueSource
+public record struct ExtensionValueSource
 {
     public ExtensionValueSource(ExtensionElement<OpenXmlElement> element, ExtensionValueSourceType type, XmlQualifiedName? attribute = null)
     {
@@ -41,7 +41,7 @@ public struct ExtensionValueSource
     public XmlQualifiedName? Attribute { get; }
 }
 
-public struct XmlQualifiedName
+public record struct XmlQualifiedName
 {
     public XmlQualifiedName(string propertyName, string name, string namespaceUri, string namespacePrefix)
     {
