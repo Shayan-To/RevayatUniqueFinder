@@ -12,7 +12,7 @@ public readonly record struct ExtensionValue<T>(T Value, ExtensionValueSource So
 
 public readonly record struct ExtensionValueSource(ExtensionElement<OpenXmlElement> Element, ExtensionValueSourceType Type, XmlQualifiedName? Attribute = null);
 
-public readonly record struct XmlQualifiedName(string PropertyName, string Name, string NamespaceUri, string NamespacePrefix);
+public readonly record struct XmlQualifiedName(string Name, string XmlName, string NamespaceUri, string NamespacePrefix);
 
 public enum ExtensionValueSourceType
 {
