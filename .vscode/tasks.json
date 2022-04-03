@@ -9,6 +9,7 @@
                 "build",
                 "${workspaceFolder}/RevayatUniqueFinder.csproj",
                 "/property:GenerateFullPaths=true",
+                "/property:FullBuild=true",
                 "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
@@ -21,6 +22,7 @@
                 "publish",
                 "${workspaceFolder}/RevayatUniqueFinder.csproj",
                 "/property:GenerateFullPaths=true",
+                "/property:FullBuild=true",
                 "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
@@ -34,6 +36,7 @@
                 "run",
                 "${workspaceFolder}/RevayatUniqueFinder.csproj",
                 "/property:GenerateFullPaths=true",
+                "/property:FullBuild=true",
                 "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"

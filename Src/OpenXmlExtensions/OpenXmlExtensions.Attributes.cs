@@ -20,6 +20,6 @@ static partial class OpenXmlExtensions
 
     private static ReadOnlyDictionary<(Type ElementType, string NamespaceUri, string LocalName), AttributeData> _AttributesDataDic;
 
-    public readonly record struct AttributeData(Type ElementType, Type AttributeType, XmlQualifiedName Name);
+    public record class AttributeData(Type ElementType, Type AttributeType, XmlQualifiedName Name);
     public readonly record struct AttributeValue(XmlQualifiedName Name, string? Value);
 }

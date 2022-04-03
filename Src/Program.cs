@@ -26,7 +26,7 @@ static void Test()
 {
     var body = ReadBody();
 
-    JsonSerializer.Serialize(Console.OpenStandardOutput(), new OutputXml(body, new()), new JsonSerializerOptions() {});
+    JsonSerializer.Serialize(Console.OpenStandardOutput(), new OutputXml(body, new()), new JsonSerializerOptions() { WriteIndented = true });
 
     // Traverse(body, el => {
     //     Patches.ElArrayToElement.Add(el.DynGetAttrsArray(), el);
