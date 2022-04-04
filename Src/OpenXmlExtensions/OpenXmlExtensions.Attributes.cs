@@ -6,10 +6,8 @@ static partial class OpenXmlExtensions
 {
     static OpenXmlExtensions()
     {
-        _AttributesDataDic = new(AttributesData.ToDictionary(d =>
-        {
-            return (d.ElementType, d.Name.NamespaceUri, d.Name.Name);
-        }));
+        var list = AttributesData.Prepend(new(typeof(DocumentFormat.OpenXml.Wordprocessing.Document), typeof(DocumentFormat.OpenXml.StringValue), new("IgnorablePrefixes", "Ignorable", "http://schemas.openxmlformats.org/markup-compatibility/2006", "mc")));
+        _AttributesDataDic = new(list.ToDictionary(d => (d.ElementType, d.Name.NamespaceUri, d.Name.XmlName)));
     }
 
     public static IEnumerable<AttributeValue> GetXAttributes(this OpenXmlElement element)
@@ -20,6 +18,8 @@ static partial class OpenXmlExtensions
 
     private static ReadOnlyDictionary<(Type ElementType, string NamespaceUri, string LocalName), AttributeData> _AttributesDataDic;
 
+    [GenerateTs]
     public record class AttributeData(Type ElementType, Type AttributeType, XmlQualifiedName Name);
+    [GenerateTs]
     public readonly record struct AttributeValue(XmlQualifiedName Name, string? Value);
 }

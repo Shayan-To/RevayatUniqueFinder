@@ -1,4 +1,5 @@
 using System.Reflection;
+using System.Text.Json.Serialization;
 
 public class TsTypesGenerator
 {
@@ -12,6 +13,10 @@ public class TsTypesGenerator
         if (this.sthBefore)
         {
             this.Writer.WriteLine();
+            if (this.AutoFlush)
+            {
+                this.Writer.Flush();
+            }
             this.sthBefore = false;
             return true;
         }
@@ -77,14 +82,21 @@ public class TsTypesGenerator
         });
     }
 
-    private string NormalizeTypeName(string name)
+    private readonly HashSet<Type> WarnedTypes = new();
+    private TsTypesGenerator WriteTypeName(Type type)
     {
-        return name.RegexReplace(@"`\d+$", "");
+        var att = type.GetCustomAttribute<GenerateTsAttribute>(false);
+        if (att == null && !type.IsGenericParameter && this.WarnedTypes.Add(type.IsGenericType ? type.GetGenericTypeDefinition() : type))
+        {
+            Console.WriteLine($"!! WARNING: Type '{type.FullName}' occurs in generation, but does not have 'GenerateTs' attribute.");
+        }
+        var name = att?.Name ?? type.Name.RegexReplace(@"`\d+$", "");
+        return this.WriteExpression(name);
     }
 
     private bool IsAny(Type type)
     {
-        return AnyTypes.Any(t => type.IsAssignableTo(t));
+        return type == typeof(object) || AnyTypes.Any(t => type.IsAssignableTo(t));
     }
 
     private TsTypesGenerator WriteType(Type type)
@@ -101,7 +113,6 @@ public class TsTypesGenerator
     {
         if (PrimitiveTypes.TryGetValue(type, out var primType))
         {
-            Verify.NonNull(primType);
             return this.WriteExpression(primType);
         }
 
@@ -110,9 +121,29 @@ public class TsTypesGenerator
             return this.WriteExpression("any");
         }
 
+        if (type.IsArray)
+        {
+            Assert.False(isDecl);
+            Verify.True(type.GetArrayRank() == 1, "Arrays of high rank are not supported.");
+            return this.WriteExpression("(").WriteType(type.GetElementType()!, isDecl, owner).WriteExpression(")[]");
+        }
 
+        if (type.IsGenericType && type.GetGenericTypeDefinition() is { } gType)
+        {
+            if (gType == typeof(Nullable<>))
+            {
+                Assert.False(isDecl);
+                return this.WriteExpression("(").WriteType(type.GetGenericArguments().Single(), isDecl, owner).WriteExpression(") | null");
+            }
+            if (gType.IsAssignableTo(typeof(IReadOnlyList<>)) || gType == typeof(IEnumerable<>))
+            {
+                Assert.False(isDecl);
+                var elementType = type.GetInterfaces().Prepend(type).Single(t => t.IsGenericType && t.GetGenericTypeDefinition() == typeof(IEnumerable<>)).GetGenericArguments().Single();
+                return this.WriteExpression("(").WriteType(elementType, isDecl, owner).WriteExpression(")[]");
+            }
+        }
 
-        this.WriteExpression(this.NormalizeTypeName(type.Name));
+        this.WriteTypeName(type);
 
         if (type.IsGenericType)
         {
@@ -143,7 +174,7 @@ public class TsTypesGenerator
         this.WriteStatement($"export interface ", true)
             .WriteType(type, true);
 
-        if (type.BaseType != typeof(object) && type.BaseType != null)
+        if (type.BaseType != typeof(object) && type.BaseType != typeof(ValueType) && type.BaseType != null)
         {
             this.WriteExpression($" extends ")
                 .WriteType(type.BaseType);
@@ -153,6 +184,10 @@ public class TsTypesGenerator
         {
             foreach (var prop in type.GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.DeclaredOnly))
             {
+                if (prop.GetCustomAttribute<JsonIgnoreAttribute>() is not null)
+                {
+                    continue;
+                }
                 this.WriteStatement($"{prop.Name}: ")
                     .WriteType(prop.PropertyType, prop)
                     .WriteSemi();
@@ -170,7 +205,9 @@ public class TsTypesGenerator
 
     private TsTypesGenerator WriteEnum(Type type)
     {
-        this.WriteStatement($"export type {type.Name} = ", true);
+        this.WriteStatement("export type ", true)
+            .WriteTypeName(type)
+            .WriteExpression(" = ");
 
         var Or = this.Separator(" | ");
 
@@ -186,10 +223,10 @@ public class TsTypesGenerator
     {
         switch (type)
         {
-            case { IsClass: true }:
-                return this.WriteClass(type);
             case { IsEnum: true }:
                 return this.WriteEnum(type);
+            case { IsClass: true } or { IsValueType: true, IsPrimitive: false, IsEnum: false }:
+                return this.WriteClass(type);
             default:
                 throw Verify.FailArg(nameof(type));
         }
@@ -209,29 +246,32 @@ public class TsTypesGenerator
         this.WriteStatement("declare global", true);
         using (this.WriteBlock())
         {
-            this.WriteStatement("type integer = number").WriteSemi();
+            this.WriteStatement("type integer = number", true).WriteSemi();
             this.WriteStatement("type long = number").WriteSemi();
             this.WriteStatement("type short = number").WriteSemi();
             this.WriteStatement("type sbyte = number").WriteSemi();
 
-            this.WriteStatement("type uinteger = number").WriteSemi();
+            this.WriteStatement("type uinteger = number", true).WriteSemi();
             this.WriteStatement("type ulong = number").WriteSemi();
             this.WriteStatement("type ushort = number").WriteSemi();
             this.WriteStatement("type byte = number").WriteSemi();
 
-            this.WriteStatement("type single = number").WriteSemi();
+            this.WriteStatement("type single = number", true).WriteSemi();
             this.WriteStatement("type double = number").WriteSemi();
             this.WriteStatement("type decimal = number").WriteSemi();
+
+            this.WriteStatement("type cstype = string", true).WriteSemi();
         }
         return this;
     }
 
     public TextWriter Writer { get; }
+    public bool AutoFlush { get; set; } = true;
 
     private bool sthBefore = false;
     private int indentLevel = 0;
 
-    private static readonly IReadOnlyDictionary<Type, string?> PrimitiveTypes = new Dictionary<Type, string?>()
+    private static readonly IReadOnlyDictionary<Type, string> PrimitiveTypes = new Dictionary<Type, string>()
     {
         [typeof(int)] = "integer",
         [typeof(long)] = "long",
@@ -250,7 +290,7 @@ public class TsTypesGenerator
         [typeof(bool)] = "boolean",
         [typeof(string)] = "string",
 
-        [typeof(object)] = null,
+        [typeof(Type)] = "cstype"
     };
 
     private static readonly IReadOnlyList<Type> AnyTypes = new Type[] {

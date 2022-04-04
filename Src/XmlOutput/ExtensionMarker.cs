@@ -1,5 +1,3 @@
-using System.Collections.ObjectModel;
-
 namespace RevayatUniqueFinder;
 
 public class ExtensionMarker : ExtensionListener

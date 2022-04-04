@@ -11,7 +11,7 @@ public static partial class OpenXmlExtensions
     private static ExtensionValue<T> GetAttribute<TElement, T>(this ExtensionElement<TElement> element, XmlQualifiedName name)
         where TElement : OpenXmlElement where T : OpenXmlSimpleType, new()
     {
-        var att = element.Element.GetAttribute(name.Name, name.NamespaceUri);
+        var att = element.Element.GetAttribute(name.XmlName, name.NamespaceUri);
         var res = new ExtensionValue<T>(new() { InnerText = att.Value }, new(element, ExtensionValueSourceType.Attribute, name));
         Listeners.OnAttributeAccess(element, name, new(res.Value, res.Source));
         return res;

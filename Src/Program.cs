@@ -2,37 +2,52 @@ using System.Collections;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 
-var False = false;
-var True = true;
-
-if (False)
+if (Utilities.False)
 {
     DrawChildrenTree();
-}
-if (False)
-{
-    GenerateTypes();
-}
-if (True)
-{
-    Test();
+    return;
 }
 
-static void Test()
+if (Directory.Exists(Paths.GenOutput))
 {
-    var body = ReadBody();
+    Directory.Delete(Paths.GenOutput, true);
+}
+Directory.CreateDirectory(Paths.GenOutput);
 
-    JsonSerializer.Serialize(Console.OpenStandardOutput(), new OutputXml(body, new()), new JsonSerializerOptions() { WriteIndented = true });
+GenerateTypes();
 
-    // Traverse(body, el => {
-    //     Patches.ElArrayToElement.Add(el.DynGetAttrsArray(), el);
-    // });
+var extensionMarker = new ExtensionMarker();
+OpenXmlExtensions.AddListener(extensionMarker);
 
-    // Console.WriteLine(body.DynGetAttrsArray().AllToString());
+var docName = "Untitled 1.docx";
+var doc = WordprocessingDocument.Open(Path.Combine(Paths.Documents, docName), false);
+var document = doc.MainDocumentPart?.Document;
+Verify.NonNull(document);
+
+var serializationOptions = new JsonSerializerOptions()
+{
+    WriteIndented = true,
+    Converters =
+    {
+        new TypeNameConverter(),
+    },
+};
+
+var metadataFile = Path.Combine(Paths.GenOutput, "metadata.json");
+using (var stream = File.Open(metadataFile, FileMode.Create, FileAccess.Write, FileShare.Read))
+{
+    JsonSerializer.Serialize(stream, new { OpenXmlExtensions.AttributesData }, serializationOptions);
+}
+
+var documentFile = Path.Combine(Paths.GenOutput, "document.json");
+using (var stream = File.Open(documentFile, FileMode.Create, FileAccess.Write, FileShare.Read))
+{
+    JsonSerializer.Serialize(stream, new OutputXml(document, extensionMarker), serializationOptions);
 }
 
 static void Traverse(OpenXmlElement element, Action<OpenXmlElement> action)
@@ -46,16 +61,9 @@ static void Traverse(OpenXmlElement element, Action<OpenXmlElement> action)
 
 static void GenerateTypes()
 {
-    var basePath = Paths.GenOutput;
-    var typesFile = Path.Combine($"{basePath}", "types.ts");
-
-    if (Directory.Exists(basePath))
-    {
-        Directory.Delete(basePath, true);
-    }
-    Directory.CreateDirectory(basePath);
-
+    var typesFile = Path.Combine(Paths.GenOutput, "types.ts");
     using var writer = new StreamWriter(File.Open(typesFile, FileMode.Create, FileAccess.Write, FileShare.Read));
+
     var generator = new TsTypesGenerator(writer);
     generator.WriteDefaultTypes()
         .WriteTypesOfAssembly(Assembly.GetEntryAssembly()!);
@@ -63,22 +71,16 @@ static void GenerateTypes()
 
 static void DrawChildrenTree()
 {
-    var body = ReadBody();
-    var treeDrawer = ConsoleTreeDrawer<Type>.CreateFromChildren(new OpenXmlElement[] { body }, e => e.ChildElements, e => e.GetType());
+    var docName = "Untitled 1.docx";
+    var doc = WordprocessingDocument.Open(Path.Combine(Paths.Documents, docName), false);
+    var document = doc.MainDocumentPart!.Document;
+
+    var treeDrawer = ConsoleTreeDrawer<Type>.CreateFromChildren(new OpenXmlElement[] { document }, e => e.ChildElements, e => e.GetType());
 
     foreach (var l in treeDrawer.MakeTree())
     {
         Console.WriteLine(l);
     }
-}
-
-static Body ReadBody()
-{
-    var docName = "Untitled 1.docx";
-    var doc = WordprocessingDocument.Open(Path.Combine(Paths.Documents, docName), false);
-    var body = doc.MainDocumentPart?.Document.Body;
-    Verify.NonNull(body);
-    return body;
 }
 
 // static class Exts
@@ -123,3 +125,23 @@ static Body ReadBody()
 
 //     public static readonly Harmony harmony = new(Assembly.GetEntryAssembly()!.GetName().Name);
 // }
+
+public class TypeNameConverter : JsonConverter<Type>
+{
+    public override Type? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    {
+        Assert.True(typeToConvert == typeof(Type));
+
+        var name = JsonSerializer.Deserialize<string>(ref reader, options);
+        if (name is null)
+        {
+            return null;
+        }
+        return Type.GetType(name);
+    }
+
+    public override void Write(Utf8JsonWriter writer, Type value, JsonSerializerOptions options)
+    {
+        JsonSerializer.Serialize(writer, value.FullName, options);
+    }
+}
