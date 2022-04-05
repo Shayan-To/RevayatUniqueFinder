@@ -16,14 +16,8 @@ declare global {
 
 export type CsType = string;
 
-export interface ModelBase<TXml = any> {
-    XmlElement: TXml;
+export interface Document {
 }
-
-export interface Paragraph extends ModelBase<any> {
-}
-
-export type EnumTest = "Test1" | "Test2" | "Test3";
 
 export interface ExtensionValue<T> {
     Value: T;

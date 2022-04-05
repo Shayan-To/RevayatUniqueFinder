@@ -1,7 +1,6 @@
 namespace RevayatUniqueFinder;
 
 [GenerateTs]
-public class ModelBase<TXml> where TXml : OpenXmlElement
+public record class Document
 {
-    public TXml XmlElement { get; init; } = null!;
 }

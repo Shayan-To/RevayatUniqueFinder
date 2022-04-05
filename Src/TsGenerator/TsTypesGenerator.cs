@@ -122,6 +122,7 @@ public class TsTypesGenerator : IDisposable
 
     private TsTypesGenerator WriteType(Type type, bool isDecl = false, ICustomAttributeProvider? owner = null)
     {
+        // this.NullabilityInfoContext.Create()
         if (PrimitiveTypes.TryGetValue(type, out var primType))
         {
             return this.WriteExpression(primType);
@@ -332,6 +333,8 @@ public class TsTypesGenerator : IDisposable
     private static readonly IReadOnlyList<Type> AnyTypes = new Type[] {
         typeof(OpenXmlElement),
     };
+
+    private readonly NullabilityInfoContext NullabilityInfoContext = new();
 
     public record struct TypeAlias(Type ToType)
     {
