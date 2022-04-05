@@ -90,11 +90,13 @@ $OutFile = "$PSScriptRoot\OpenXmlExtensions.g.cs"
 New-Item -Force -ItemType File $OutFile | Out-Null
 "namespace RevayatUniqueFinder;" | Out-File -Append $OutFile
 
-ForEach ($Type In Get-Content "$PSScriptRoot\Types.txt")
-{
-    $SType = $Type -Split '>', 2
-    Generate ($ElementMetadata::Create($OpenXmlAssembly.GetType($SType[0])::New())) ($SType[1]) | Out-File -Append $OutFile
-}
+& {
+    ForEach ($Type In Get-Content "$PSScriptRoot\Types.txt")
+    {
+        $SType = $Type -Split '>', 2
+        Generate ($ElementMetadata::Create($OpenXmlAssembly.GetType($SType[0])::New())) ($SType[1])
+    }
+} | Out-File -Append $OutFile
 
 $OutFile = "$PSScriptRoot\OpenXmlExtensions.Attributes.g.cs"
 New-Item -Force -ItemType File $OutFile | Out-Null
