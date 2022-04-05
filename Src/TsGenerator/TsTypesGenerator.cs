@@ -3,9 +3,13 @@ using System.Text.Json.Serialization;
 
 public class TsTypesGenerator
 {
-    public TsTypesGenerator(TextWriter writer)
+    public TsTypesGenerator(TextWriter writer) : this(writer, new())
+    {}
+
+    public TsTypesGenerator(TextWriter writer, Configuration config)
     {
         this.Writer = writer;
+        this.Config = config;
     }
 
     private bool FinishBefore()
@@ -13,7 +17,7 @@ public class TsTypesGenerator
         if (this.sthBefore)
         {
             this.Writer.WriteLine();
-            if (this.AutoFlush)
+            if (this.Config.AutoFlush)
             {
                 this.Writer.Flush();
             }
@@ -85,11 +89,18 @@ public class TsTypesGenerator
     private readonly HashSet<Type> WarnedTypes = new();
     private TsTypesGenerator WriteTypeName(Type type)
     {
+        if (this.Config.Aliases.TryGetValue(type, out var alias))
+        {
+            Verify.False(type.IsGenericType);
+            return this.WriteExpression(alias.Name ?? type.Name);
+        }
+
         var att = type.GetCustomAttribute<GenerateTsAttribute>(false);
         if (att == null && !type.IsGenericParameter && this.WarnedTypes.Add(type.IsGenericType ? type.GetGenericTypeDefinition() : type))
         {
-            Console.WriteLine($"!! WARNING: Type '{type.FullName}' occurs in generation, but does not have 'GenerateTs' attribute.");
+            Console.WriteLine($"!! WARNING: Type '{type.FullName ?? $"{type.Name} ({type.Namespace})"}' occurs in generation, but does not have 'GenerateTs' attribute.");
         }
+
         var name = att?.Name ?? type.Name.RegexReplace(@"`\d+$", "");
         return this.WriteExpression(name);
     }
@@ -241,6 +252,21 @@ public class TsTypesGenerator
         return this;
     }
 
+    public TsTypesGenerator WriteAliases()
+    {
+        var first = true;
+        foreach (var (fromType, alias) in this.Config.Aliases)
+        {
+            this.WriteStatement("export type ", first)
+                .WriteTypeName(fromType)
+                .WriteExpression(" = ")
+                .WriteType(alias.ToType)
+                .WriteSemi();
+            first = false;
+        }
+        return this;
+    }
+
     public TsTypesGenerator WriteDefaultTypes()
     {
         this.WriteStatement("declare global", true);
@@ -259,14 +285,12 @@ public class TsTypesGenerator
             this.WriteStatement("type single = number", true).WriteSemi();
             this.WriteStatement("type double = number").WriteSemi();
             this.WriteStatement("type decimal = number").WriteSemi();
-
-            this.WriteStatement("type cstype = string", true).WriteSemi();
         }
         return this;
     }
 
     public TextWriter Writer { get; }
-    public bool AutoFlush { get; set; } = true;
+    public Configuration Config { get; }
 
     private bool sthBefore = false;
     private int indentLevel = 0;
@@ -289,11 +313,20 @@ public class TsTypesGenerator
 
         [typeof(bool)] = "boolean",
         [typeof(string)] = "string",
-
-        [typeof(Type)] = "cstype"
     };
 
     private static readonly IReadOnlyList<Type> AnyTypes = new Type[] {
         typeof(OpenXmlElement),
     };
+
+    public record struct TypeAlias(Type ToType)
+    {
+        public string? Name { get; init; } = null;
+    }
+
+    public record class Configuration
+    {
+        public bool AutoFlush { get; set; } = true;
+        public Dictionary<Type, TypeAlias> Aliases { get; } = new();
+    }
 }

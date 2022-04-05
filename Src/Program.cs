@@ -13,22 +13,6 @@ if (Utilities.False)
     return;
 }
 
-if (Directory.Exists(Paths.GenOutput))
-{
-    Directory.Delete(Paths.GenOutput, true);
-}
-Directory.CreateDirectory(Paths.GenOutput);
-
-GenerateTypes();
-
-var extensionMarker = new ExtensionMarker();
-OpenXmlExtensions.AddListener(extensionMarker);
-
-var docName = "Untitled 1.docx";
-var doc = WordprocessingDocument.Open(Path.Combine(Paths.Documents, docName), false);
-var document = doc.MainDocumentPart?.Document;
-Verify.NonNull(document);
-
 var serializationOptions = new JsonSerializerOptions()
 {
     WriteIndented = true,
@@ -37,6 +21,37 @@ var serializationOptions = new JsonSerializerOptions()
         new TypeNameConverter(),
     },
 };
+
+var tsGeneratorConfig = new TsTypesGenerator.Configuration()
+{
+    Aliases =
+    {
+        [typeof(Type)] = new(typeof(string)) { Name = "CsType" }
+    }
+};
+
+if (Directory.Exists(Paths.GenOutput))
+{
+    Directory.Delete(Paths.GenOutput, true);
+}
+Directory.CreateDirectory(Paths.GenOutput);
+
+var typesFile = Path.Combine(Paths.GenOutput, "types.ts");
+using (var writer = new StreamWriter(File.Open(typesFile, FileMode.Create, FileAccess.Write, FileShare.Read)))
+{
+    var generator = new TsTypesGenerator(writer, tsGeneratorConfig);
+    generator.WriteDefaultTypes()
+        .WriteAliases()
+        .WriteTypesOfAssembly(Assembly.GetEntryAssembly()!);
+}
+
+var extensionMarker = new ExtensionMarker();
+OpenXmlExtensions.AddListener(extensionMarker);
+
+var docName = "Untitled 1.docx";
+var doc = WordprocessingDocument.Open(Path.Combine(Paths.Documents, docName), false);
+var document = doc.MainDocumentPart?.Document;
+Verify.NonNull(document);
 
 var metadataFile = Path.Combine(Paths.GenOutput, "metadata.json");
 using (var stream = File.Open(metadataFile, FileMode.Create, FileAccess.Write, FileShare.Read))
@@ -57,16 +72,6 @@ static void Traverse(OpenXmlElement element, Action<OpenXmlElement> action)
     {
         Traverse(ch, action);
     }
-}
-
-static void GenerateTypes()
-{
-    var typesFile = Path.Combine(Paths.GenOutput, "types.ts");
-    using var writer = new StreamWriter(File.Open(typesFile, FileMode.Create, FileAccess.Write, FileShare.Read));
-
-    var generator = new TsTypesGenerator(writer);
-    generator.WriteDefaultTypes()
-        .WriteTypesOfAssembly(Assembly.GetEntryAssembly()!);
 }
 
 static void DrawChildrenTree()
@@ -131,13 +136,7 @@ public class TypeNameConverter : JsonConverter<Type>
     public override Type? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         Assert.True(typeToConvert == typeof(Type));
-
-        var name = JsonSerializer.Deserialize<string>(ref reader, options);
-        if (name is null)
-        {
-            return null;
-        }
-        return Type.GetType(name);
+        throw new NotSupportedException();
     }
 
     public override void Write(Utf8JsonWriter writer, Type value, JsonSerializerOptions options)
