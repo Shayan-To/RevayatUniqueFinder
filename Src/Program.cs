@@ -39,7 +39,7 @@ Directory.CreateDirectory(Paths.GenOutput);
 var typesFile = Path.Combine(Paths.GenOutput, "types.ts");
 using (var writer = new StreamWriter(File.Open(typesFile, FileMode.Create, FileAccess.Write, FileShare.Read)))
 {
-    var generator = new TsTypesGenerator(writer, tsGeneratorConfig);
+    using var generator = new TsTypesGenerator(writer, tsGeneratorConfig);
     generator.WriteDefaultTypes()
         .WriteAliases()
         .WriteTypesOfAssembly(Assembly.GetEntryAssembly()!);

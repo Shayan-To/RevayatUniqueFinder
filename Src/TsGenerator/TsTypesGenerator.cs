@@ -1,10 +1,10 @@
 using System.Reflection;
 using System.Text.Json.Serialization;
 
-public class TsTypesGenerator
+public class TsTypesGenerator : IDisposable
 {
     public TsTypesGenerator(TextWriter writer) : this(writer, new())
-    {}
+    { }
 
     public TsTypesGenerator(TextWriter writer, Configuration config)
     {
@@ -289,7 +289,21 @@ public class TsTypesGenerator
         return this;
     }
 
+    public void Dispose()
+    {
+        this.FinishBefore();
+        if (this.NoWriterDispose)
+        {
+            this.Writer.Flush();
+        }
+        else
+        {
+            this.Writer.Dispose();
+        }
+    }
+
     public TextWriter Writer { get; }
+    public bool NoWriterDispose { get; init; } = false;
     public Configuration Config { get; }
 
     private bool sthBefore = false;

@@ -12,9 +12,9 @@ declare global {
     type single = number;
     type double = number;
     type decimal = number;
-
-    type cstype = string;
 }
+
+export type CsType = string;
 
 export interface ModelBase<TXml = any> {
     XmlElement: TXml;
@@ -54,8 +54,8 @@ export interface XmlElement {
 }
 
 export interface AttributeData {
-    ElementType: cstype;
-    AttributeType: cstype;
+    ElementType: CsType;
+    AttributeType: CsType;
     Name: XmlQualifiedName;
 }
 
