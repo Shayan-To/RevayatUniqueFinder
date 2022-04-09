@@ -30,11 +30,18 @@ var tsGeneratorConfig = new TsTypesGenerator.Configuration()
     }
 };
 
-if (Directory.Exists(Paths.GenOutput))
+if (!Directory.Exists(Paths.GenOutput))
 {
-    Directory.Delete(Paths.GenOutput, true);
+    Directory.CreateDirectory(Paths.GenOutput);
 }
-Directory.CreateDirectory(Paths.GenOutput);
+foreach (var d in Directory.EnumerateDirectories(Paths.GenOutput))
+{
+    Directory.Delete(d, true);
+}
+foreach (var f in Directory.EnumerateFiles(Paths.GenOutput))
+{
+    File.Delete(f);
+}
 
 var typesFile = Path.Combine(Paths.GenOutput, "types.ts");
 using (var writer = new StreamWriter(File.Open(typesFile, FileMode.Create, FileAccess.Write, FileShare.Read)))

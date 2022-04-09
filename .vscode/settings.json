@@ -15,6 +15,7 @@
     "peacock.color": "#315924",
     "files.exclude": {
         "Client/{[^d]*,d[^a]*,da[^t]*,dat[^a]*,data?*}": true,
+        "Client/data/{[^g]*,g[^e]*,ge[^n]*,gen?*}": true,
         ".vs": true,
         "bin": true,
         "obj": true,

@@ -47,7 +47,7 @@
     <ItemGroup>
         <CustomAttribute Include="RevayatUniqueFinder.PathAttribute">
             <_Parameter1>GenOutput</_Parameter1>
-            <_Parameter2>$(ProjectDir)Client\data</_Parameter2>
+            <_Parameter2>$(ProjectDir)Client\data\gen</_Parameter2>
         </CustomAttribute>
         <CustomAttribute Include="RevayatUniqueFinder.PathAttribute">
             <_Parameter1>Documents</_Parameter1>
