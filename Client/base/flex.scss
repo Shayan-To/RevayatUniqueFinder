@@ -1,0 +1,134 @@
+.row,
+.column {
+    display: flex;
+}
+
+.row {
+    flex-direction: row;
+
+    &.reverse {
+        flex-direction: row-reverse;
+    }
+}
+
+.column {
+    flex-direction: column;
+
+    &.reverse {
+        flex-direction: column-reverse;
+    }
+}
+
+.wrap {
+    flex-wrap: wrap;
+
+    &-reverse {
+        flex-wrap: wrap-reverse;
+    }
+}
+
+.no-wrap {
+    flex-wrap: nowrap;
+}
+
+.xcontent- {
+    &start {
+        align-content: flex-start;
+    }
+    &end {
+        align-content: flex-end;
+    }
+    &center {
+        align-content: center;
+    }
+    &around {
+        align-content: space-around;
+    }
+    &between {
+        align-content: space-between;
+    }
+    &stretch {
+        align-content: stretch;
+    }
+}
+
+.lcontent- {
+    &start {
+        justify-content: flex-start;
+    }
+    &end {
+        justify-content: flex-end;
+    }
+    &center {
+        justify-content: center;
+    }
+    &around {
+        justify-content: space-around;
+    }
+    &between {
+        justify-content: space-between;
+    }
+    &stretch {
+        justify-content: stretch;
+    }
+}
+
+.xitems- {
+    &start {
+        align-items: flex-start;
+    }
+    &center {
+        align-items: center;
+    }
+    &end {
+        align-items: flex-end;
+    }
+    &stretch {
+        align-items: stretch;
+    }
+}
+
+.litems- {
+    &start {
+        justify-items: flex-start;
+    }
+    &center {
+        justify-items: center;
+    }
+    &end {
+        justify-items: flex-end;
+    }
+    &stretch {
+        justify-items: stretch;
+    }
+}
+
+.xself- {
+    &start {
+        align-self: flex-start;
+    }
+    &center {
+        align-self: center;
+    }
+    &end {
+        align-self: flex-end;
+    }
+    &stretch {
+        align-self: stretch;
+    }
+}
+
+.lself- {
+    &start {
+        justify-self: flex-start;
+    }
+    &center {
+        justify-self: center;
+    }
+    &end {
+        justify-self: flex-end;
+    }
+    &stretch {
+        justify-self: stretch;
+    }
+}

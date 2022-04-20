@@ -1,7 +1,10 @@
 {
     "compilerOptions": {
+        "target": "ES6",
+        "lib": ["DOM", "DOM.Iterable", "ESNext"],
         "experimentalDecorators": true,
         "jsx": "react-jsx",
+        "moduleResolution": "node",
         "esModuleInterop": true,
         "resolveJsonModule": true,
         "isolatedModules": true,

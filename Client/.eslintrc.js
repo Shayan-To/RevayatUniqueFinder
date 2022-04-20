@@ -33,6 +33,8 @@ const config = {
         curly: ["error", "all"],
         "no-console": "warn",
         "no-debugger": "warn",
+        "@typescript-eslint/no-namespace": "off",
+        "@typescript-eslint/no-empty-interface": "off"
     },
 };
 

@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 declare global {
     type integer = number;
     type long = number;

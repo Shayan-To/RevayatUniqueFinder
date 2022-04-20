@@ -1,0 +1,13 @@
+.xml-element {
+    ::before {
+        content: "<";
+    }
+
+    ::after {
+        content: ">";
+    }
+
+    .xml-attribute {
+        margin-left: 0.5em;
+    }
+}
