@@ -44,5 +44,9 @@
     ".parcel-cache/": true,
     "dist/": true,
     ".pnp.*": true
+  },
+  "files.associations": {
+    "yarn.lock": "yaml",
+    ".parcelrc": "jsonc"
   }
 }

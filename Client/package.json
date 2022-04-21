@@ -12,7 +12,7 @@
         "eslint:fix-all": "yarn eslint --fix",
         "lint": "yarn prettier:check && tsc --noEmit && yarn eslint",
         "lint:fix-all": "yarn prettify:all && yarn eslint:fix",
-        "postinstall": "sdks && ts-node --skipProject ./.yarn/sdks-patch.ts"
+        "postinstall-new!": "sdks && ts-node --skipProject ./.yarn/sdks-patch.ts"
     },
     "dependencies": {
         "@emotion/react": "^11.9.0",
@@ -28,6 +28,7 @@
         "tslib": "^2.3.1"
     },
     "devDependencies": {
+        "@parcel/transformer-inline-string": "2.4.1",
         "@parcel/transformer-sass": "^2.4.1",
         "@types/eslint": "^8.4.1",
         "@types/node": "^17.0.25",
