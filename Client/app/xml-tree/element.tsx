@@ -1,19 +1,29 @@
+import clsx from "clsx";
 import { XmlElement } from "~data/gen/types";
 import "./element.scss";
 
 export function Element(props: Element.Props) {
-    if (props.endTag) {
-        return <div className="xml-element row">/ {props.element.Name.Name}</div>;
-    }
     return (
-        <div className="xml-element row wrap">
-            {props.element.Name.Name}
-            {props.element.Attributes.map((att, i) => (
-                <div key={i} className="xml-attribute">
-                    {att.Value.Name.Name} = {att.Value.Value}
-                </div>
+        <span
+            className={clsx(
+                "xml-element wrap",
+                props.selfClosing && "self-closing",
+                props.endTag && "end-tag",
+            )}
+        >
+            {props.element.Name.Name.split(".").map((namePart, i) => (
+                <span key={i} className="name-part">
+                    {namePart}
+                </span>
             ))}
-        </div>
+            {!props.endTag &&
+                props.element.Attributes.map((att, i) => (
+                    <span key={i} className="attribute">
+                        <span className="name">{att.Value.Name.Name}</span>
+                        <span className="value">{att.Value.Value}</span>
+                    </span>
+                ))}
+        </span>
     );
 }
 
@@ -21,5 +31,6 @@ export namespace Element {
     export interface Props {
         element: XmlElement;
         endTag?: boolean;
+        selfClosing?: boolean;
     }
 }

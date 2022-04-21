@@ -1,13 +1,34 @@
+@use "sass:math";
+
 .xml-element {
-    ::before {
+    &::before {
         content: "<";
     }
 
-    ::after {
+    &::after {
         content: ">";
     }
 
-    .xml-attribute {
+    .name-part {
+        $size-factor: 1.5;
+
+        &:not(:last-of-type) {
+            // color: gray;
+            font-size: math.div(1em, $size-factor);
+        }
+
+        &:not(:first-of-type)::before {
+            content: ".";
+            // color: gray;
+        }
+
+        &:not(:first-of-type):not(:last-of-type)::before {
+            font-size: 1em * $size-factor;
+        }
+    }
+
+    .xml-attribute,
+    .self-close {
         margin-left: 0.5em;
     }
 }

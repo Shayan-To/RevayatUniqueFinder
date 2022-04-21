@@ -1,3 +1,4 @@
+import { StyledEngineProvider } from "@mui/material";
 import { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import "sanitize.css";
@@ -9,7 +10,9 @@ import "./index.scss";
 
 ReactDOM.render(
     <StrictMode>
-        <App />
+        <StyledEngineProvider injectFirst>
+            <App />
+        </StyledEngineProvider>
     </StrictMode>,
     document.getElementById("root"),
 );

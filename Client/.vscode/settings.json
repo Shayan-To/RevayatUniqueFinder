@@ -24,10 +24,10 @@
     "**/.yarn": true,
     "**/.pnp.*": true
   },
-  "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
-  "typescript.tsdk": ".yarn/sdks/typescript/lib",
+//   "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
+//   "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
-  "eslint.nodePath": ".yarn/sdks",
+//   "eslint.nodePath": ".yarn/sdks",
   "explorer.experimental.fileNesting.enabled": true,
   "explorer.experimental.fileNesting.expand": true,
   "explorer.experimental.fileNesting.patterns": {
@@ -41,6 +41,7 @@
     "package.json": "yarn.lock, .yarnrc.yml"
   },
   "files.exclude": {
+    "node_modules/": true,
     ".parcel-cache/": true,
     "dist/": true,
     ".pnp.*": true
@@ -48,5 +49,14 @@
   "files.associations": {
     "yarn.lock": "yaml",
     ".parcelrc": "jsonc"
-  }
+  },
+  "cSpell.words": [
+    "lcontent",
+    "litems",
+    "lself",
+    "Revayat",
+    "xcontent",
+    "xitems",
+    "xself"
+  ]
 }

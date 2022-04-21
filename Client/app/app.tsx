@@ -1,3 +1,4 @@
+import { Slider } from "@mui/material";
 import { useInitRef } from "~base/hooks";
 import { document } from "~data";
 import "./app.scss";
@@ -6,12 +7,38 @@ import { Node } from "./xml-tree/node";
 
 export function App() {
     const vm = useInitRef(() => ({
+        setViewStart(e: any, value: number | number[]) {
+            if (Array.isArray(value)) {
+                throw new Error("Assertion error");
+            }
+            vm.manager.viewStart = value;
+        },
         manager: new Manager(document),
+        initialized: false,
     }));
 
+    vm.manager.useChanged();
+
+    const doc = vm.manager.doc;
+
+    if (!vm.initialized) {
+        vm.initialized = true;
+    }
+
     return (
-        <div>
-            <Node manager={vm.manager} element={vm.manager.doc.document} />
+        <div className="xitems-stretch">
+            <span>
+                <span style={{ margin: "0 1em" }}>{vm.manager.viewStart}, {vm.manager.viewEnd}</span>
+                <Slider
+                    className="grow"
+                    // orientation="vertical"
+                    value={vm.manager.viewStart}
+                    min={vm.manager.viewStartMin}
+                    max={vm.manager.viewStartMax}
+                    onChange={vm.setViewStart}
+                />
+            </span>
+            <Node manager={vm.manager} element={doc.document} />
         </div>
     );
 }

@@ -1,0 +1,16 @@
+.xml-node {
+    padding-left: 1em;
+
+    > :first-child,
+    > :last-child {
+        margin-left: -1em;
+    }
+
+    &:hover {
+        background-color: #0001;
+    }
+
+    .ellipsis {
+        box-shadow: 0 0 1px 1px red;
+    }
+}

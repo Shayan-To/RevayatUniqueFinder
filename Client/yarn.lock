@@ -4917,6 +4917,7 @@ __metadata:
     "@typescript-eslint/utils": ^5.20.0
     "@yarnpkg/pnpify": ^4.0.0-rc.2
     "@yarnpkg/sdks": ^3.0.0-rc.2
+    clsx: ^1.1.1
     core-js: ^3.22.0
     eslint: ^8.13.0
     eslint-config-prettier: ^8.5.0

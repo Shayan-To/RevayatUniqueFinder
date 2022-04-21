@@ -10,20 +10,34 @@ export function Node(props: Node.Props) {
 
     man.useChanged();
 
-    if (
-        man.viewStart + man.viewActualCount <= doc.index[el.ElementId] ||
-        doc.index[el.ElementId] + doc.childrenCount[el.ElementId] <= man.viewStart
-    ) {
+    if (!doc.intersectsWith(el, man.viewStart, man.viewEnd)) {
         return null;
     }
 
+    const hasChildren = el.Children.length !== 0;
+
     return (
-        <div>
-            <Element element={el} />
+        <div className="xml-node">
+            <span>
+                <Element element={el} />
+                {doc.index[el.ElementId]}
+            </span>
+
+            {el.Children.length >= 2 &&
+                !doc.intersectsWith(el.Children[0].Value, man.viewStart, man.viewEnd) && (
+                    <span className="ellipsis" />
+                )}
+
             {el.Children.map((ch, i) => (
                 <Node key={i} manager={man} element={ch.Value} />
             ))}
-            <Element element={el} endTag />
+
+            {el.Children.length >= 2 &&
+                !doc.intersectsWith(el.Children[el.Children.length - 1].Value, man.viewStart, man.viewEnd) && (
+                    <span className="ellipsis" />
+                )}
+
+            {<Element element={el} endTag />}
         </div>
     );
 }
