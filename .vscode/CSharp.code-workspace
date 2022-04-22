@@ -9,17 +9,23 @@
     ],
     "settings": {
         "workbench.colorCustomizations": {
-            "editorGroup.border": "#6eecba",
-            "panel.border": "#6eecba",
-            "sideBar.border": "#6eecba",
             "statusBar.background": "#41e6a4",
             "statusBar.foreground": "#15202b",
             "statusBarItem.hoverBackground": "#1cd88d",
-            "tab.activeBorder": "#6eecba",
             "titleBar.activeBackground": "#41e6a4",
             "titleBar.activeForeground": "#15202b",
             "titleBar.inactiveBackground": "#41e6a499",
-            "titleBar.inactiveForeground": "#15202b99"
+            "titleBar.inactiveForeground": "#15202b99",
+            "activityBar.activeBackground": "#6eecba",
+            "activityBar.activeBorder": "#bc72ed",
+            "activityBar.background": "#6eecba",
+            "activityBar.foreground": "#15202b",
+            "activityBar.inactiveForeground": "#15202b99",
+            "activityBarBadge.background": "#bc72ed",
+            "activityBarBadge.foreground": "#15202b",
+            "sash.hoverBorder": "#6eecba",
+            "statusBarItem.remoteBackground": "#41e6a4",
+            "statusBarItem.remoteForeground": "#15202b"
         },
         "peacock.color": "#41e6a4",
         "omnisharp.defaultLaunchSolution": "RevayatUniqueFinder.sln",

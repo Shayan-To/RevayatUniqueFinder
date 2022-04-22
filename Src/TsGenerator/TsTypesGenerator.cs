@@ -290,6 +290,11 @@ public class TsTypesGenerator : IDisposable
         return this;
     }
 
+    public TsTypesGenerator WriteEslintDisable()
+    {
+        return this.WriteStatement("/* eslint-disable */", true);
+    }
+
     public void Dispose()
     {
         this.FinishBefore();

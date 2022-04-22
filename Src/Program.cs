@@ -47,7 +47,8 @@ var typesFile = Path.Combine(Paths.GenOutput, "types.ts");
 using (var writer = new StreamWriter(File.Open(typesFile, FileMode.Create, FileAccess.Write, FileShare.Read)))
 {
     using var generator = new TsTypesGenerator(writer, tsGeneratorConfig);
-    generator.WriteDefaultTypes()
+    generator.WriteEslintDisable()
+        .WriteDefaultTypes()
         .WriteAliases()
         .WriteTypesOfAssembly(Assembly.GetEntryAssembly()!);
 }
