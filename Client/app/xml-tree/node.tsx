@@ -8,6 +8,7 @@ export function Node(props: Node.Props) {
     const man = props.manager;
     const doc = man.doc;
     const el = props.element;
+    const elD = doc.withId[el.ElementId];
 
     man.useChanged();
 
@@ -16,13 +17,13 @@ export function Node(props: Node.Props) {
     }
 
     const hasChildren = el.Children.length !== 0;
-    const noChildren = hasChildren && doc.index[el.ElementId] + 1 === man.viewEnd;
+    const noChildren = hasChildren && elD.index + 1 === man.viewEnd;
 
     return (
         <div className="xml-node">
             <span>
                 <Element element={el} />
-                {doc.index[el.ElementId]}
+                {elD.index}/{elD.leafIndex}
             </span>
 
             {hasChildren &&

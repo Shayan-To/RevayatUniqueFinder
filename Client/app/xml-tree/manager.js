@@ -1,74 +1,60 @@
 import { useEffect } from "react";
 import { Event } from "~base/event";
 import { useUpdate } from "~base/hooks";
-import { IntegerInterval } from "~base/utils/math";
-import { XmlElement } from "~data/gen/types";
 import { DocumentData } from "./document-data";
-
 export class Manager {
-    public constructor(document: XmlElement) {
+    constructor(document) {
+        this._viewCount = 20;
+        this._viewStart = 0;
+        this.changedEvent = new Event();
         this.doc = new DocumentData(document);
         this.coerceViewStart();
     }
-
-    public addChangedListener(listener: VoidFunction) {
+    addChangedListener(listener) {
         return this.changedEvent.addListener(listener);
     }
-
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    public useChanged(listener: VoidFunction = useUpdate()) {
+    useChanged(listener = useUpdate()) {
         // eslint-disable-next-line react-hooks/rules-of-hooks
         useEffect(() => {
             const cleanup = this.addChangedListener(listener);
             return cleanup;
         }, [listener]);
     }
-
-    protected onChanged() {
+    onChanged() {
         this.changedEvent.forEachListener((l) => l());
     }
-
-    public get viewStartMin() {
+    get viewStartMin() {
         return this.doc.atIndex[0].firstLeaf.index;
     }
-
-    public get viewStartMax() {
+    get viewStartMax() {
         const totalChildrenCount = this.doc.atIndex[0].childrenCount;
         const lastChildParentCount = this.doc.atIndex[totalChildrenCount].parentCount;
         return totalChildrenCount + 1 - this.viewCount + lastChildParentCount;
     }
-
-    public get viewEnd() {
+    get viewEnd() {
         return this.viewStart + this.viewCount - this.doc.atIndex[this.viewStart].parentCount;
     }
-
-    public get viewInterval(): IntegerInterval {
+    get viewInterval() {
         return [this.viewStart, this.viewEnd];
     }
-
-    private _viewCount = 20;
-    public get viewCount() {
+    get viewCount() {
         return this._viewCount;
     }
-    public set viewCount(value: Manager["_viewCount"]) {
+    set viewCount(value) {
         this._viewCount = value;
         this.coerceViewStart();
         this.onChanged();
     }
-
-    private _viewStart = 0;
-    public get viewStart() {
+    get viewStart() {
         return this._viewStart;
     }
-    public set viewStart(value: Manager["_viewStart"]) {
+    set viewStart(value) {
         this._viewStart = value;
         this.coerceViewStart();
         this.onChanged();
     }
-    private coerceViewStart() {
+    coerceViewStart() {
         this._viewStart = Math.min(Math.max(this._viewStart, this.viewStartMin), this.viewStartMax);
     }
-
-    public readonly doc: DocumentData;
-    public readonly changedEvent = new Event();
 }
