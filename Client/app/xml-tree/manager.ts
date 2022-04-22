@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Event } from "~base/event";
 import { useUpdate } from "~base/hooks";
+import { IntegerInterval } from "~base/utils/math";
 import { XmlElement } from "~data/gen/types";
 import { DocumentData } from "./document-data";
 
@@ -45,6 +46,10 @@ export class Manager {
 
     public get viewEnd() {
         return this.viewStart + this.viewActualCount;
+    }
+
+    public get viewInterval(): IntegerInterval {
+        return [this.viewStart, this.viewEnd];
     }
 
     private _viewCount = 20;

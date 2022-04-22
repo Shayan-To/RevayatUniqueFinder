@@ -1,3 +1,4 @@
+import { IntegerInterval } from "~base/utils/math";
 import { XmlElement } from "~data/gen/types";
 
 export class DocumentData {
@@ -46,11 +47,9 @@ export class DocumentData {
         return [firstLeafIndex, leafCount, childrenCount];
     }
 
-    public intersectsWith(element: XmlElement, startIndex: number, endIndex: number) {
-        const elStartIndex = this.index[element.ElementId];
-        const elEndIndex = elStartIndex + this.childrenCount[element.ElementId] + 1;
-
-        return !(endIndex <= elStartIndex || elEndIndex <= startIndex);
+    public getIndexInterval(element: XmlElement): IntegerInterval {
+        const start = this.index[element.ElementId];
+        return [start, start + this.childrenCount[element.ElementId] + 1];
     }
 
     public readonly withId: { [elementId: number]: XmlElement } = {};

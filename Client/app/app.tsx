@@ -1,4 +1,5 @@
 import { Slider } from "@mui/material";
+import { WheelEvent } from "react";
 import { useInitRef } from "~base/hooks";
 import { document } from "~data";
 import "./app.scss";
@@ -12,6 +13,9 @@ export function App() {
                 throw new Error("Assertion error");
             }
             vm.manager.viewStart = value;
+        },
+        onWheel(e: WheelEvent) {
+            vm.manager.viewStart += Math.sign(e.deltaY);
         },
         manager: new Manager(document),
         initialized: false,
@@ -28,7 +32,9 @@ export function App() {
     return (
         <div className="xitems-stretch">
             <span>
-                <span style={{ margin: "0 1em" }}>{vm.manager.viewStart}, {vm.manager.viewEnd}</span>
+                <span style={{ margin: "0 1em" }}>
+                    {vm.manager.viewStart}, {vm.manager.viewEnd}
+                </span>
                 <Slider
                     className="grow"
                     // orientation="vertical"
@@ -38,7 +44,9 @@ export function App() {
                     onChange={vm.setViewStart}
                 />
             </span>
-            <Node manager={vm.manager} element={doc.document} />
+            <div onWheel={vm.onWheel}>
+                <Node manager={vm.manager} element={doc.document} />
+            </div>
         </div>
     );
 }

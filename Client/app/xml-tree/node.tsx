@@ -1,3 +1,4 @@
+import { intervalIntersectsWith } from "~base/utils/math";
 import { XmlElement } from "~data/gen/types";
 import { Element } from "./element";
 import { Manager } from "./manager";
@@ -10,11 +11,12 @@ export function Node(props: Node.Props) {
 
     man.useChanged();
 
-    if (!doc.intersectsWith(el, man.viewStart, man.viewEnd)) {
+    if (!intervalIntersectsWith(doc.getIndexInterval(el), man.viewInterval)) {
         return null;
     }
 
     const hasChildren = el.Children.length !== 0;
+    const noChildren = hasChildren && doc.index[el.ElementId] + 1 === man.viewEnd;
 
     return (
         <div className="xml-node">
@@ -23,19 +25,21 @@ export function Node(props: Node.Props) {
                 {doc.index[el.ElementId]}
             </span>
 
-            {el.Children.length >= 2 &&
-                !doc.intersectsWith(el.Children[0].Value, man.viewStart, man.viewEnd) && (
-                    <span className="ellipsis" />
-                )}
+            {hasChildren &&
+                !intervalIntersectsWith(
+                    doc.getIndexInterval(el.Children[0].Value),
+                    man.viewInterval,
+                ) && <span className="ellipsis" />}
 
-            {el.Children.map((ch, i) => (
-                <Node key={i} manager={man} element={ch.Value} />
-            ))}
+            {!noChildren &&
+                el.Children.map((ch, i) => <Node key={i} manager={man} element={ch.Value} />)}
 
-            {el.Children.length >= 2 &&
-                !doc.intersectsWith(el.Children[el.Children.length - 1].Value, man.viewStart, man.viewEnd) && (
-                    <span className="ellipsis" />
-                )}
+            {!noChildren &&
+                hasChildren &&
+                !intervalIntersectsWith(
+                    doc.getIndexInterval(el.Children[el.Children.length - 1].Value),
+                    man.viewInterval,
+                ) && <span className="ellipsis" />}
 
             {<Element element={el} endTag />}
         </div>
