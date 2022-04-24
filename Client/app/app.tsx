@@ -31,9 +31,13 @@ export function App() {
 
     return (
         <div className="xitems-stretch">
-            <span style={{paddingRight:"2em"}}>
+            <span style={{ paddingRight: "2em" }}>
                 <span style={{ margin: "0 1em" }}>
-                    {vm.manager.viewStart}, {vm.manager.viewEnd}
+                    {vm.manager.viewStart}, {vm.manager.viewEnd},{" "}
+                    {doc.getLineCount(
+                        doc.atIndex[vm.manager.viewStart],
+                        doc.atIndex[vm.manager.viewEnd - 1],
+                    )}
                 </span>
                 <Slider
                     className="grow"
@@ -44,8 +48,15 @@ export function App() {
                     onChange={vm.setViewStart}
                 />
             </span>
-            <div onWheel={vm.onWheel}>
-                <Node manager={vm.manager} element={doc.document} />
+            <div className="row" onWheel={vm.onWheel}>
+                <div>
+                    {new Array(vm.manager.viewLineCount).fill(null).map((_, i) => (
+                        <span key={i}>{i + 1}</span>
+                    ))}
+                </div>
+                <div className="grow">
+                    <Node manager={vm.manager} element={doc.document} />
+                </div>
             </div>
         </div>
     );

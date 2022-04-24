@@ -18,12 +18,15 @@ export function Node(props: Node.Props) {
 
     const hasChildren = el.Children.length !== 0;
     const noChildren = hasChildren && elD.index + 1 === man.viewEnd;
+    const selfClosing = !hasChildren && !el.Content.Value;
 
     return (
         <div className="xml-node">
             <span>
-                <Element element={el} />
+                <Element element={el} selfClosing={selfClosing} />
                 {elD.index}/{elD.leafIndex}
+                {"  l: "}
+                {elD.lineIndex}
             </span>
 
             {hasChildren &&
@@ -32,7 +35,7 @@ export function Node(props: Node.Props) {
                     man.viewInterval,
                 ) && <span className="ellipsis" />}
 
-            <span>{el.Content.Value}</span>
+            {man.viewStart <= elD.index && <span>{el.Content.Value}</span>}
 
             {!noChildren &&
                 el.Children.map((ch, i) => <Node key={i} manager={man} element={ch.Value} />)}
@@ -44,7 +47,7 @@ export function Node(props: Node.Props) {
                     man.viewInterval,
                 ) && <span className="ellipsis" />}
 
-            {<Element element={el} endTag />}
+            {!selfClosing && <Element element={el} endTag />}
         </div>
     );
 }

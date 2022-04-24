@@ -11,6 +11,9 @@ interface ElementData {
     index: number;
     childrenCount: number;
 
+    lineIndex: number;
+    lineCount: number;
+
     leafIndex: number;
     leafCount: number;
 }
@@ -23,11 +26,13 @@ export class DocumentData {
             parentCount: -1,
             index: -1,
             leafIndex: -1,
+            lineIndex: -1,
+            lineCount: 1,
             childrenCount: 0,
             leafCount: 0,
             firstLeaf: null!,
         });
-        // for (const [ind, dat] of Object.entries(this.atIndex)) {
+        // for (const [, dat] of Object.entries(this.atIndex)) {
         //     console.log(this.debdat[dat.element.ElementId])
         // }
     }
@@ -55,9 +60,11 @@ export class DocumentData {
             // parent's children count up to this child
             index: parent.index + parent.childrenCount + 1,
             leafIndex: parent.leafIndex + parent.leafCount,
+            lineIndex: parent.lineIndex + parent.lineCount,
 
             childrenCount: 0,
             leafCount: 0,
+            lineCount: this.getElementLineCount(element) - 1,
             firstLeaf: null!,
         };
         this.withId[element.ElementId] = d;
@@ -71,6 +78,7 @@ export class DocumentData {
             if (i === 0) {
                 d.firstLeaf = chD.firstLeaf;
             }
+            d.lineCount += chD.lineCount;
             d.leafCount += chD.leafCount;
             d.childrenCount += chD.childrenCount + 1;
         }
@@ -82,15 +90,28 @@ export class DocumentData {
         } else {
             d.leafIndex = d.firstLeaf.leafIndex;
         }
+        d.lineCount += 1;
 
         // this.debdat[element.ElementId].f = this.stringify(d);
 
         return d;
     }
 
+    private getElementLineCount(element: XmlElement) {
+        const cont = element.Content.Value ? 1 : 0;
+        if (element.Children.length === 0 && cont === 0) {
+            return 1;
+        }
+        return 2 + cont;
+    }
+
     public getIndexInterval(element: XmlElement): IntegerInterval {
         const d = this.withId[element.ElementId];
         return [d.index, d.index + d.childrenCount + 1];
+    }
+
+    public getLineCount(first: ElementData, last: ElementData) {
+        return last.lineIndex - first.lineIndex + 1 + first.parentCount + last.parentCount + this.getElementLineCount(last.element) - 1;
     }
 
     public readonly withId: { [elementId: number]: ElementData } = {};
