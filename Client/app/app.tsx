@@ -31,7 +31,7 @@ export function App() {
 
     return (
         <div className="xitems-stretch">
-            <span>
+            <span style={{paddingRight:"2em"}}>
                 <span style={{ margin: "0 1em" }}>
                     {vm.manager.viewStart}, {vm.manager.viewEnd}
                 </span>

@@ -5,8 +5,17 @@
         content: "<";
     }
 
+    &.end-tag::before {
+        content: "</";
+    }
+
     &::after {
         content: ">";
+    }
+
+    &.self-closing::after {
+        content: "/>";
+        margin-left: 0.5em;
     }
 
     .name-part {
@@ -27,8 +36,16 @@
         }
     }
 
-    .xml-attribute,
-    .self-close {
+    .attribute {
         margin-left: 0.5em;
+
+        .name::after {
+            content: "=";
+        }
+
+        .value::before,
+        .value::after {
+            content: '"';
+        }
     }
 }

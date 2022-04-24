@@ -6,7 +6,7 @@ export function Element(props: Element.Props) {
     return (
         <span
             className={clsx(
-                "xml-element wrap",
+                "xml-element",
                 props.selfClosing && "self-closing",
                 props.endTag && "end-tag",
             )}

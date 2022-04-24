@@ -32,6 +32,8 @@ export function Node(props: Node.Props) {
                     man.viewInterval,
                 ) && <span className="ellipsis" />}
 
+            <span>{el.Content.Value}</span>
+
             {!noChildren &&
                 el.Children.map((ch, i) => <Node key={i} manager={man} element={ch.Value} />)}
 
