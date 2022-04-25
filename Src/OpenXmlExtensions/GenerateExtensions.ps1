@@ -98,7 +98,10 @@ New-Item -Force -ItemType File $OutFile | Out-Null
     }
 } | Out-File -Append $OutFile
 
-$OutFile = "$PSScriptRoot\OpenXmlExtensions.Attributes.g.cs"
-New-Item -Force -ItemType File $OutFile | Out-Null
-"namespace RevayatUniqueFinder;" | Out-File -Append $OutFile
-GenerateAttributeData | Out-File -Append $OutFile
+If ($False)
+{
+    $OutFile = "$PSScriptRoot\OpenXmlExtensions.Attributes.g.cs"
+    New-Item -Force -ItemType File $OutFile | Out-Null
+    "namespace RevayatUniqueFinder;" | Out-File -Append $OutFile
+    GenerateAttributeData | Out-File -Append $OutFile
+}

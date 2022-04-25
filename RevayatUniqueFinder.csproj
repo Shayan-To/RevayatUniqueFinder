@@ -11,7 +11,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-      <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+        <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(FullBuild)' == 'true'">
@@ -26,8 +26,14 @@
         <Using Include="DocumentFormat.OpenXml.Wordprocessing" Alias="Word" />
     </ItemGroup>
 
+    <PropertyGroup>
+        <InternalsAssemblyNames>DocumentFormat.OpenXml</InternalsAssemblyNames>
+        <InternalsAssemblyUseEmptyMethodBodies>false</InternalsAssemblyUseEmptyMethodBodies>
+    </PropertyGroup>
+
     <ItemGroup>
         <PackageReference Include="DocumentFormat.OpenXml" Version="2.15.0" />
+        <PackageReference Include="IgnoresAccessChecksToGenerator" Version="0.4.0" PrivateAssets="All" />
     </ItemGroup>
 
     <ItemGroup>

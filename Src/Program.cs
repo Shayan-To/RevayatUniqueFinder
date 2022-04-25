@@ -61,16 +61,16 @@ var doc = WordprocessingDocument.Open(Path.Combine(Paths.Documents, docName), fa
 var document = doc.MainDocumentPart?.Document;
 Verify.NonNull(document);
 
-var metadataFile = Path.Combine(Paths.GenOutput, "metadata.json");
-using (var stream = File.Open(metadataFile, FileMode.Create, FileAccess.Write, FileShare.Read))
-{
-    JsonSerializer.Serialize(stream, new { OpenXmlExtensions.AttributesData }, serializationOptions);
-}
-
 var documentFile = Path.Combine(Paths.GenOutput, "document.json");
 using (var stream = File.Open(documentFile, FileMode.Create, FileAccess.Write, FileShare.Read))
 {
     JsonSerializer.Serialize(stream, new OutputXml(document, extensionMarker), serializationOptions);
+}
+
+var metadataFile = Path.Combine(Paths.GenOutput, "metadata.json");
+using (var stream = File.Open(metadataFile, FileMode.Create, FileAccess.Write, FileShare.Read))
+{
+    JsonSerializer.Serialize(stream, new { OpenXmlExtensions.AttributesData }, serializationOptions);
 }
 
 static void Traverse(OpenXmlElement element, Action<OpenXmlElement> action)
