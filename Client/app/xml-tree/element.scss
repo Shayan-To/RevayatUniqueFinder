@@ -18,6 +18,10 @@
         margin-left: 0.5em;
     }
 
+    .element-accessed + .attribute {
+        margin: 0;
+    }
+
     .name-part {
         $size-factor: 1.5;
 

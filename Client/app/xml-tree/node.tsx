@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { intervalIntersectsWith } from "~base/utils/math";
 import { XmlElement } from "~data/gen/types";
 import { Element } from "./element";
@@ -23,10 +24,14 @@ export function Node(props: Node.Props) {
     return (
         <div className="xml-node">
             <span>
-                <Element element={el} selfClosing={selfClosing} />
-                {elD.index}/{elD.leafIndex}
-                {"  l: "}
-                {elD.lineIndex}
+                <Element element={el} selfClosing={selfClosing} accessed={el.Content.IsAccessed} />
+                {/* <span
+                    className={clsx(
+                        "element-accessed",
+                        props.accessed !== undefined &&
+                            (props.accessed ? "accessed" : "not-accessed"),
+                    )}
+                /> */}
             </span>
 
             {hasChildren &&
@@ -35,10 +40,23 @@ export function Node(props: Node.Props) {
                     man.viewInterval,
                 ) && <span className="ellipsis" />}
 
-            {man.viewStart <= elD.index && <span>{el.Content.Value}</span>}
+            {man.viewStart <= elD.index && (
+                <span>
+                    <span
+                        className={clsx(
+                            "content",
+                            el.Content.IsAccessed ? "accessed" : "not-accessed",
+                        )}
+                    >
+                        {el.Content.Value}
+                    </span>
+                </span>
+            )}
 
             {!noChildren &&
-                el.Children.map((ch, i) => <Node key={i} manager={man} element={ch.Value} />)}
+                el.Children.map((ch, i) => (
+                    <Node key={i} manager={man} element={ch.Value} accessed={ch.IsAccessed} />
+                ))}
 
             {!noChildren &&
                 hasChildren &&
@@ -56,5 +74,6 @@ export namespace Node {
     export interface Props {
         manager: Manager;
         element: XmlElement;
+        accessed?: boolean;
     }
 }

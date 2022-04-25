@@ -13,4 +13,24 @@
     .ellipsis {
         box-shadow: 0 0 1px 1px red;
     }
+
+    .content {
+        min-width: 1em;
+    }
+
+    .element-accessed {
+        width: 0.5em;
+        height: 0.5em;
+        margin: 0 0.5em;
+        align-self: center;
+        border-radius: 50%;
+    }
+
+    .accessed {
+        background-color: rgba(4, 217, 0, 0.5);
+    }
+
+    .not-accessed {
+        background-color: rgba(255, 72, 0, 0.5);
+    }
 }

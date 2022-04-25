@@ -16,9 +16,20 @@ export function Element(props: Element.Props) {
                     {namePart}
                 </span>
             ))}
+
+            <span
+                className={clsx(
+                    "element-accessed",
+                    props.accessed !== undefined && (props.accessed ? "accessed" : "not-accessed"),
+                )}
+            />
+
             {!props.endTag &&
                 props.element.Attributes.map((att, i) => (
-                    <span key={i} className="attribute">
+                    <span
+                        key={i}
+                        className={clsx("attribute", att.IsAccessed ? "accessed" : "not-accessed")}
+                    >
                         <span className="name">{att.Value.Name.Name}</span>
                         <span className="value">{att.Value.Value}</span>
                     </span>
@@ -32,5 +43,6 @@ export namespace Element {
         element: XmlElement;
         endTag?: boolean;
         selfClosing?: boolean;
+        accessed?: boolean;
     }
 }
