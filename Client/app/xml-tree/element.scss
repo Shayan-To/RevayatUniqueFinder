@@ -18,8 +18,8 @@
         margin-left: 0.5em;
     }
 
-    .element-accessed + .attribute {
-        margin: 0;
+    &:not(.self-closing) .element-accessed {
+        margin-right: 0.5em;
     }
 
     .name-part {

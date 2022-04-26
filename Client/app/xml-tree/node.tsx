@@ -24,7 +24,7 @@ export function Node(props: Node.Props) {
     return (
         <div className="xml-node">
             <span>
-                <Element element={el} selfClosing={selfClosing} accessed={el.Content.IsAccessed} />
+                <Element element={el} selfClosing={selfClosing} accessed={props.accessed} />
                 {/* <span
                     className={clsx(
                         "element-accessed",

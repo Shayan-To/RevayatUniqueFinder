@@ -21,9 +21,13 @@
     .element-accessed {
         width: 0.5em;
         height: 0.5em;
-        margin: 0 0.5em;
+        margin-left: 0.5em;
         align-self: center;
         border-radius: 50%;
+
+        &:not(.accessed):not(.not-accessed) {
+            display: none;
+        }
     }
 
     .accessed {
